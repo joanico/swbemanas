@@ -5,7 +5,7 @@ from marobo.models import Potential
 
 
 Class Create(CreateView):
-    models = Potential
-    fields = ['name', 'location', 'image']
+    models = Population
+    fields = ['distrito', 'sub_distrito', 'suco', 'aldeia']
     template_name = 'marobo/create.html'
-    success_url = /reverse_lazy('list')
+    success_url = /reverse_lazy('index')
