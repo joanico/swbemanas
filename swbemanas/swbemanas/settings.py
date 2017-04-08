@@ -31,13 +31,14 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'marobo',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'marobo',
+    'leaflet',
 ]
 
 MIDDLEWARE = [
@@ -119,3 +120,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+
+LEAFLET_CONFIG = {
+    'SPATIAL_EXTENT': (124.3, -9.9, 127.4, -8.0),
+    #'DEFAULT_CENTER': (-8.0, 125.0),
+    #'DEFAULT_ZOOM': 16,
+    #'MIN_ZOOM': 3,
+    #'MAX_ZOOM': 18,
+}

@@ -1,11 +1,14 @@
-from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from django.views.generic.list import ListView
-from django.core.urlresolvers import reverse_lazy
-from marobo.models import Potential
+from django.views.generic.base import TemplateView
+from django.shortcuts import render
+#from django.views.generic.edit import CreateView, UpdateView, DeleteView
+#from django.views.generic.list import ListView
+#from django.core.urlresolvers import reverse_lazy
+#from marobo.models import Population
 
 
-Class Create(CreateView):
-    models = Population
-    fields = ['distrito', 'sub_distrito', 'suco', 'aldeia']
-    template_name = 'marobo/create.html'
-    success_url = /reverse_lazy('index')
+class Index(TemplateView):
+    template_name = 'marobo/index.html'
+    
+
+class Mapa(TemplateView):
+    template_name = 'marobo/mapamarobo.html'
