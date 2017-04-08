@@ -1,0 +1,1311 @@
+
+body{
+    font-family: "AvenirLTStd-Book";
+    height: 100%;
+    color: #515252;
+}
+
+.AvenirLT-Heavy {
+	font-family: AvenirLT-Heavy;
+	font-weight: normal;
+	font-style: normal;
+}
+.AvenirLTStd-Medium {
+	font-family: AvenirLTStd-Medium;
+	font-weight: normal;
+	font-style: normal;
+}
+.AvenirLTStd-Light {
+	font-family: AvenirLTStd-Light;
+	font-weight: normal;
+	font-style: normal;
+}
+.AvenirLTStd-Book {
+	font-family: AvenirLTStd-Book;
+	font-weight: normal;
+	font-style: normal;
+}
+.AvenirLTStd-Black {
+	font-family: AvenirLTStd-Black;
+	font-weight: normal;
+	font-style: normal;
+}
+
+p {
+    font-family: AvenirLTStd-Book;;
+    font-style: normal;
+    font-size: 15px;
+    line-height: 20px;
+    margin-top: 20px;
+    margin-left: 0px;
+    margin-right: 0px
+
+}
+
+p.center {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+a {
+    color: #8CC152;
+}
+
+a:hover {
+    color: #76ab3b !important;
+}
+
+
+blockquote {
+    width: 40%;
+    float: right;
+
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+blockquote p {
+    margin-top: 0px!important;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+
+q {
+    width: 100%;
+    display: inline-block;
+    line-height: 1.5;
+    text-align: center;
+    font-size: 28px;
+    font-style: italic;
+    font-family: AvenirLTStd-Light;
+    margin-top: 48px;
+    margin-bottom: 48px;
+    border: none;
+    padding: 0;
+}
+
+.index_icons {
+    font-size: 50px;
+    color: #959494;
+}
+
+h2 {
+    font-family: AvenirLT-heavy;
+    font-size: 27px;
+    line-height: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 30px;
+    margin-bottom: 30px
+}
+
+h2:after {
+   display: block;
+   height: 2px;
+   background-color: #515252;
+   content: " ";
+   margin-left: auto;
+   margin-right: auto;
+   width: 50px;
+   margin-top: 9px
+}
+
+h3 {
+    font-family: AvenirLTStd-Book;
+    font-size: 28px;
+}
+
+h4.media-heading {
+    font-weight: 600;
+    font-style: normal;
+    font-size: 15px;
+    text-align: left
+}
+
+h5 {
+    font-family: AvenirLT-Heavy;
+    font-size: 18px;
+     text-transform: uppercase;
+}
+
+h5:after {
+    display: block;
+    height: 2px;
+    background-color: #515252;
+    content: " ";
+    width: 50px;
+    margin-top: 9px;
+    margin-left: 0px!important;
+}
+
+h6 {
+    font-family: AvenirLT-Heavy;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+h6:after {
+    display: block;
+    height: 1px;
+    background-color: #515252;
+    content: " ";
+    width: 50px;
+    margin-top: 9px;
+    margin-left: 0px!important;
+}
+
+h6.text-center:after {
+    height: 0px;
+}
+
+h7 {
+   font-family: AvenirLTStd-Black;
+   font-size: 12px;
+   text-transform: uppercase;
+}
+
+.contacts_title {
+    margin-top: 0;
+    font-size: 20px;
+}
+
+.home_page_block {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.media-body p {
+    font-family: AvenirLTStd-Book;;
+    font-style: normal;
+    font-size: 13px;
+    line-height: 20px;
+    margin-top: 6px;
+    margin-left: 0px;
+    margin-right: 0px;
+    color: #515252;
+}
+
+hr {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+
+i.media-icon {
+    color: #6e706c;
+    font-size: 40px;
+}
+
+.media-body {
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+
+li.media:first-child {
+    margin-top: 20px;
+}
+
+
+a.hiring {
+    background-color: #8CC152;
+    color: #fff;
+    font-size: 14px;
+    padding: 2px 7px;
+    border-radius: 3px;
+    position: absolute;
+    left: 25%;
+    top: 45px;
+}
+
+a.hiring:hover {
+    color: #46661f !important;
+}
+
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+    .icon {
+        width: 35px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        margin-top: 20px;
+
+    }
+
+    h6 {
+        text-align: center;
+    }
+
+    h6:after {
+        margin-left:auto !important;
+        margin-right: auto !important;
+    }
+
+    p.feature {
+        text-align: center;
+    }
+
+    a.hiring {
+       right: 0;
+       top: -47px;
+    }
+
+
+}
+
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+    h6 {
+        text-align: center;
+    }
+
+    h6:after {
+        margin-left:auto !important;
+        margin-right: auto !important;
+    }
+
+    p.feature {
+        text-align: center;
+    }
+
+}
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+    h2 {
+       font-size: 22px;
+       line-height: 31px;
+    }
+
+    .sub-title {
+        width: 80% !important;
+        font-size: 17px !important;
+        line-height: 23px !important;
+        margin-bottom: 30px;
+
+    }
+
+    h6 {
+        text-align: center;
+    }
+
+    h6:after {
+        margin-left:auto !important;
+        margin-right: auto !important;
+    }
+
+    q {
+        width: 100%;
+        line-height: 1.3;
+        font-size: 20px;
+        margin-top: 28px;
+        margin-bottom: 28px;
+        margin-left: 0px;
+    }
+
+    p.feature {
+        text-align: center;
+    }
+
+}
+
+/*====== Main header =========*/
+
+
+img.catalpa-logo {
+    width: 156px;
+    margin-top: -14px;
+    padding-top: 1px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+}
+
+.navbar.navbar-default {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+    min-height: 115px;
+    width: auto;
+    border: none;
+    margin-bottom: 0;
+}
+
+ul.nav.navbar-nav {
+    height: 100%;
+}
+
+.navbar-nav li {
+    padding-top: 32px;
+    padding-bottom: 20px;
+
+}
+
+.navbar-nav li a {
+    font-size: 0.9em;
+    text-transform: uppercase;
+    font-family: AvenirLTStd-Black;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.navbar-nav li.active a{
+    background: none!important;
+}
+
+.navbar-nav li a:hover {
+    border-color:transparent;
+    background: none;
+    color:#66625b !important;
+    -webkit-transition: color 0.3s ease;
+    -moz-transition: color 0.3s ease;
+    -o-transition: color 0.3s ease;
+    -ms-transition: color 0.3s ease;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.navbar-toggle {
+    margin-top: 40px;
+    margin-right: 20px;
+}
+
+.social-icons {
+    font-size: 32px!important;
+    opacity: .27;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=27)";
+    filter: alpha(opacity=27);
+    -webkit-transition: opacity 0.2s ease-out;
+    -moz-transition: opacity 0.2s ease-out;
+    -o-transition: opacity 0.2s ease-out;
+    padding: 21px 0 1px 7px !important;
+    margin-right: -4px;
+}
+.social-icons:hover {
+  opacity: 1;
+    -ms-filter: none;
+    filter: none;
+}
+
+a.colour-link {
+    color: #8CC152!important;
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+
+    .navbar-nav li {
+        padding-top: 30px;
+        padding-bottom: 3px;
+        padding-left: 13px;
+        padding-right: 0px;
+    }
+
+    .navbar-nav li a {
+        font-size: 0.9em;
+        text-transform: uppercase;
+        font-family: AvenirLTStd-Black;
+        padding-left: 12px;
+        padding-right: 0px;
+        color: #8b8985 !important;
+    }
+
+    img.catalpa-logo {
+        width: 146px;
+        margin-top: -10px;
+    }
+
+}
+
+  /* Extra Small Devices, Phones */
+    @media only screen and (max-width : 480px) {
+        .navbar-header,
+        .navbar.navbar-default {
+            min-height: 110px;
+        }
+        .nav.navbar-nav {
+            height: 100%;
+            float: left !important;
+            padding-bottom: 10px;
+        }
+
+        .navbar-nav li {
+            padding-top: 3px;
+            padding-bottom: 3px;
+            padding-left: 13px;
+            padding-right: 0px;
+        }
+
+    }
+
+
+/*  ======== Jumbatron ========= */
+
+
+
+.jumbotron {
+    border-radius: 0;
+    box-shadow: none!important;
+}
+
+.jumbotron-home {
+    min-height: 600px;
+    background: url(../img/HEADER.jpg) center center / cover no-repeat scroll;
+    -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://media02.hongkiat.com/oversized-background-image-design/bg.jpg', sizingMethod='scale')";
+      filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='.http://media02.hongkiat.com/oversized-background-image-design/bg.jpg', sizingMethod='scale');
+}
+
+img.feature {
+    width: 320px;
+    margin-top: 20px;
+}
+
+.jumbotron h1 {
+    color: #fff;
+    font-family: AvenirLTStd-Black;
+    font-size: 58px;
+    width: 550px !important;
+    margin-top: 220px;
+    display: block;
+    text-transform: uppercase;
+    line-height: 56px;
+
+}
+
+/*.jumbotron h1:after {
+    display: block;
+    height: 2px;
+    background-color: #fff;
+    content: " ";
+    margin-top: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 50px;
+}*/
+
+.jumbotron.main_banner h1:after {
+    margin-left: 0;
+    margin-right: auto;
+    width: 371px;
+}
+
+.heading_txt_light {
+    font-family: "AvenirLTStd-Light";
+    font-size: 44px;
+    line-height: 10px;
+}
+
+p.sub_text_main {
+    margin-left: 0 !important;
+    text-align: left!important;
+    margin-top: -2px;
+    font-family: "AvenirLTStd-Light";
+}
+
+.centered {
+    text-align: center;
+}
+
+img.img-rounded {
+    width: 100%;
+    height: 100%;
+}
+
+.jumbotron p {
+   color: #fff;
+  font-family: "AvenirLTStd-Light";
+   font-size: 20px;
+   text-align: center;
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+    text-transform: uppercase;
+}
+
+
+#book_btn  {
+    border: 2px solid #8CC152;
+    border-radius: 5px;
+    color: #8CC152;
+    margin-left: 20px;
+    padding: 5px 10px;
+}
+
+.btn-ghost {
+    border: 2px solid #8CC152;
+    border-radius: 5px;
+    color: #8CC152!important;
+    padding: 5px 10px;
+    background: none!important;
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+
+    .jumbotron-home {
+        min-height: 100px;
+    }
+
+    .jumbotron h1 {
+        font-family: "AvenirLTStd-Black";
+        font-size: 34px;
+        width: 100% !important;
+        margin-top: 200px;
+        line-height: 31px;
+        padding-top: 14px;
+
+    }
+
+    .jumbotron.main_banner h1:after {
+        width: 279px;
+    }
+
+    .heading_txt_light {
+        font-family: AvenirLTStd-Book;;
+        font-size: 22px;
+        line-height: 27px !important;
+        position: relative;
+    }
+
+    .jumbotron p {
+        font-size: 17px;
+        font-family: "AvenirLTStd-Book";
+    }
+
+
+    .icon {
+        width: 35px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        margin-top: 20px;
+    }
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+
+    img.feature {
+        width: 280px;
+        margin-top: 20px;
+    }
+
+}
+
+
+/*==========  HOME PAGE STYLES =============*/
+
+.colour_band {
+    background-color: #f8fafb;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+
+/*project tabs*/
+
+.number {
+    color: #8CC152!important;
+    padding-right: 5px;
+    font-family: AvenirLTStd-Black;
+}
+
+.nav-tabs {
+    background: none!important;
+    padding-top: 0;
+    padding-bottom: 10px;
+}
+
+.nav-tabs li {
+    border-left: none;
+}
+
+.nav-tabs li a {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #878a8a !important;
+}
+
+#Tab1 li.active a:hover,
+.nav-tabs li a:hover {
+    background: none!important;
+}
+
+.nav-tabs li.active a{
+    background: none!important;
+    color: #515252!important;
+}
+
+li.active a span.number {
+    color: #515252 !important;
+}
+
+.nav-tabs li.active a:after {
+      display: block;
+      height: 2px;
+      background-color: #515252;
+      content: " ";
+      margin-left: auto;
+      margin-right: auto;
+      width: 130px;
+      margin-top: 9px;
+}
+
+/*Carousel*/
+
+.owl-item .item img{
+    display: block;
+    width: 100%;
+    min-height: 300px;
+}
+
+
+/*Project description*/
+
+.project_block {
+    margin-top: 20px;
+
+}
+
+p.project_summary {
+    color: #79776b;
+    font-size: 15px;
+    line-height: 22px;
+    margin-top: 17px;
+    margin-bottom: 21px;
+    padding-right: 50px;
+}
+
+p.project_description {
+    font-size: 14px;
+}
+
+
+/*our clients*/
+
+
+.client_logos{
+    padding-top: 20px;
+}
+
+
+.EU_FLAG {
+     width: 149px;
+}
+
+.AUSAID {
+     width: 160px;
+}
+
+.UNDP {
+     width: 78px;
+
+}
+
+.WHO {
+    width: 130px;
+
+}
+
+.USAID {
+    width: 130px;
+
+}
+
+.FAO {
+    width: 120px;
+}
+
+
+.UNICEF {
+    width: 170px;
+
+}
+
+.WB {
+   width: 120px;
+    padding-top: 6px;
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+    .client_logos{
+        padding-top: 0px;
+    }
+    .EU_FLAG {
+         width: 60px;
+         margin-left: 10px;
+    }
+    .AUSAID {
+         width: 70px;
+    }
+    .UNDP {
+         width: 35px;
+         padding-top: 10px;
+    }
+
+    .WHO {
+        width: 65px;
+    }
+    .USAID {
+        width: 60px;
+        margin-left: 10px;
+    }
+
+    .FAO {
+        width: 55px;
+    }
+    .UNICEF {
+        width: 80px;
+    }
+    .WB {
+       width: 55px;
+        padding-top: 10px;
+    }
+
+    .owl-item .item img{
+        min-height: 0px;
+    }
+
+}
+
+
+/*========= ABOUT US  =============*/
+
+
+.about_us_logo {
+    width: 200px;
+    margin-bottom: 30px;
+}
+
+.person-name {
+    display: block;
+    font-size: 1.3125em;
+    line-height: 1.2;
+    font-family: "AvenirLTStd-Black";;
+    text-align: left;
+    margin-bottom: 3px;
+}
+
+.person-position {
+    margin-top: 2px;
+    font-size: 1.3125em;
+    line-height: 1.2;
+    font-family: "AvenirLTStd-Black";;
+    opacity: 0.41;
+}
+
+.circle-border {
+    border: 7px solid #e7e7e7;
+}
+
+
+.blog_bio_block{
+    color: #6f6f6f;
+    margin-top: 60px!important;
+}
+
+.border-small {
+    border: 3px solid #e7e7e7;
+    margin-right: 10px;
+}
+
+.blog-image{
+    width: 100px;
+    border: 4px solid #e7e7e7;
+    float: left;
+
+}
+
+.blog_bio {
+    font-size: 13px;
+    font-family: AvenirLTStd-Book;
+    color: #6f6f6f;
+    line-height: 1.4;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+    .img-circle.circle-border {
+        width: 150px;
+        margin-top: 20px;
+    }
+    .blog-image{
+        width: 80px!important;
+        float: none;
+        margin-bottom: 10px;
+    }
+
+}
+/*========= CURRENT PROJECTS  =============*/
+
+.jumbo_current_projects {
+    background: url(../img/Woman-with-orange.jpg) center center / cover no-repeat scroll;
+    min-height: 350px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.projects_page {
+    padding-top: 30px;
+}
+
+i.fa.fa-file {
+    color: #8CC152;
+    font-size: 17px;
+}
+
+.read_more_txt {
+    color: #a6a6a6;
+    padding-left: 10px;
+}
+
+
+.entypo.chevron-right {
+    top: 4px;
+    position: relative;
+    left: 4px;
+    font-size: 30px;
+    color: #a6a6a6;
+}
+
+
+ul.project_highlights {
+    font-size: 14px;
+    padding-right: 40px;
+    color: #79776b;
+
+}
+
+
+/*========= FEATURED PROJECTS  =============*/
+
+.jumbo_featured_projects_liga {
+    background: url(../img/liga_inan_screen.jpeg) center center / cover no-repeat scroll;
+    min-height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 190px;
+    box-shadow: none!important;
+}
+
+div.jumbotron.jumbo_our_people {
+    background: url(../img/Catalpa-web-41.jpeg) center center / cover no-repeat scroll;
+    min-height: 350px;
+}
+
+
+
+/*========= OUR SERVICES  =============*/
+
+.jumbo_our_services {
+    background: url(../img/Liga_inan_phone.jpg) center center / cover no-repeat scroll;
+    min-height: 350px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sub-title {
+    width: 60%;
+    font: normal normal 18px AvenirLTStd-Light;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 30px;
+    margin-bottom: 30px;
+}
+
+
+.agile.entypo {
+    font-size: 80px;
+}
+
+
+.flat_icons {
+    width: 80px;
+    margin-bottom: 10px;
+    opacity: 0.7;
+}
+
+img.mobile_devices_services {
+    width: 100%;
+}
+
+
+/*========= BLOG PAGE & POSTS =============*/
+
+h1.title_box {
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 100px;
+    font-family: AvenirLTStd-Black;
+}
+
+.blog_page {
+    padding-top: 0;
+}
+
+.jumbo_blog {
+    background: url(../img/notes.jpg) center center / cover no-repeat scroll;
+    min-height: 350px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+section#top {
+    position: relative;
+    text-align: center;
+}
+
+div.top-container {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    opacity: 1;
+}
+
+
+h3.blog {
+    letter-spacing: -0.02em;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 28px;
+    line-height: 1.2;
+    padding-top: 31px;
+    margin-bottom: 25px;
+
+}
+
+img.blog_img {
+
+    float: left;
+    margin-right: 40px;
+    margin-bottom: 20px;
+}
+
+h3.blog:after {
+    display: block;
+    height: 2px;
+    background-color: #6f6f6f;
+    content: " ";
+    width: 100px;
+    margin-top: 10px
+}
+
+
+h3.blog.text-center:after {
+    height: 0px;
+}
+
+
+p.blog {
+    font-size: 15px;
+    font-family: AvenirLTStd-Book;
+    color: #6f6f6f;
+    line-height: 1.6;
+    font-style: normal;
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+
+}
+
+.page_quote {
+    font: 25px AvenirLTStd-Light;
+    text-transform: none !important;
+}
+
+.process_diagram {
+    width: 87%;
+}
+
+.services_txt {
+    font-size: 14px;
+}
+
+.tweet_txt {
+    font-size: 15px;
+    line-height: 23px;
+}
+
+.news_link {
+    font-size: 20px;
+    font-family: AvenirLT-Heavy;
+}
+
+.news_link,
+.tweet_txt a{
+    color: #8CC152;
+}
+
+a.news_link:hover {
+    color: #76ab3b !important;
+}
+
+a.left.carousel-control,
+a.right.carousel-control {
+    background: none;
+}
+
+/* =====  WEB FOOTER =========*/
+
+
+footer {
+    margin-top: 70px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-left: 7%;
+    padding-right: 7%;
+    position: relative;
+    z-index: 1;
+    background-color: #626f76;
+    min-height: 258px;
+    padding-top: 72px;
+    width: auto;
+}
+
+.footer_logo {
+    width: 170px;
+    position: relative;
+    top: -30px;
+}
+
+footer .footer_ul li {
+    display: block;
+    font-size: .85em;
+    font-family: "AvenirLTStd-Black";;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    vertical-align: middle
+}
+
+footer a {
+    color: #fff !important;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #d1d0d0 !important;
+    cursor: pointer;
+    text-decoration: none
+}
+
+footer a:visited {
+    color: #a49e93;
+    text-decoration: none;
+}
+
+footer a:visited:hover {
+    color: #fffcf5
+}
+
+footer .copyright-info {
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+    display: block;
+    font-size: 12px;
+    padding: 30px 0;
+    text-align: center;
+    color: #fff;
+}
+
+
+/*! PhotoSwipe main CSS by Dmitry Semenov | photoswipe.com | MIT license */
+/*
+	Styles for basic PhotoSwipe functionality (sliding area, open/close transitions)
+*/
+/* pswp = photoswipe */
+.pswp {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  -ms-touch-action: none;
+  touch-action: none;
+  z-index: 1500;
+  -webkit-text-size-adjust: 100%;
+  /* create separate layer, to avoid paint on window.onscroll in webkit/blink */
+  -webkit-backface-visibility: hidden;
+  outline: none; }
+  .pswp * {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box; }
+  .pswp img {
+    max-width: none; }
+
+/* style is added when JS option showHideOpacity is set to true */
+.pswp--animate_opacity {
+  /* 0.001, because opacity:0 doesn't trigger Paint action, which causes lag at start of transition */
+  opacity: 0.001;
+  will-change: opacity;
+  /* for open/close transition */
+  -webkit-transition: opacity 333ms cubic-bezier(0.4, 0, 0.22, 1);
+          transition: opacity 333ms cubic-bezier(0.4, 0, 0.22, 1); }
+
+.pswp--open {
+  display: block; }
+
+.pswp--zoom-allowed .pswp__img {
+  /* autoprefixer: off */
+  cursor: -webkit-zoom-in;
+  cursor: -moz-zoom-in;
+  cursor: zoom-in; }
+
+.pswp--zoomed-in .pswp__img {
+  /* autoprefixer: off */
+  cursor: -webkit-grab;
+  cursor: -moz-grab;
+  cursor: grab; }
+
+.pswp--dragging .pswp__img {
+  /* autoprefixer: off */
+  cursor: -webkit-grabbing;
+  cursor: -moz-grabbing;
+  cursor: grabbing; }
+
+/*
+	Background is added as a separate element.
+	As animating opacity is much faster than animating rgba() background-color.
+*/
+.pswp__bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0;
+  -webkit-backface-visibility: hidden;
+  will-change: opacity; }
+
+.pswp__scroll-wrap {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; }
+
+.pswp__container, .pswp__zoom-wrap {
+  -ms-touch-action: none;
+  touch-action: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0; }
+
+/* Prevent selection and tap highlights */
+.pswp__container, .pswp__img {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+      user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-touch-callout: none; }
+
+.pswp__zoom-wrap {
+  position: absolute;
+  width: 100%;
+  -webkit-transform-origin: left top;
+  -ms-transform-origin: left top;
+  transform-origin: left top;
+  /* for open/close transition */
+  -webkit-transition: -webkit-transform 333ms cubic-bezier(0.4, 0, 0.22, 1);
+          transition: transform 333ms cubic-bezier(0.4, 0, 0.22, 1); }
+
+.pswp__bg {
+  will-change: opacity;
+  /* for open/close transition */
+  -webkit-transition: opacity 333ms cubic-bezier(0.4, 0, 0.22, 1);
+          transition: opacity 333ms cubic-bezier(0.4, 0, 0.22, 1); }
+
+.pswp--animated-in .pswp__bg, .pswp--animated-in .pswp__zoom-wrap {
+  -webkit-transition: none;
+  transition: none; }
+
+.pswp__container, .pswp__zoom-wrap {
+  -webkit-backface-visibility: hidden;
+  will-change: transform; }
+
+.pswp__item {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow: hidden; }
+
+.pswp__img {
+  position: absolute;
+  width: auto;
+  height: auto;
+  top: 0;
+  left: 0;
+  -webkit-transition: opacity 0.15s;
+          transition: opacity 0.15s; }
+
+/*
+	stretched thumbnail or div placeholder element (see below)
+	style is added to avoid flickering in webkit/blink when layers overlap
+*/
+.pswp__img--placeholder {
+  -webkit-backface-visibility: hidden; }
+
+/*
+	div element that matches size of large image
+	large image loads on top of it
+*/
+.pswp__img--placeholder--blank {
+  background: #222; }
+
+.pswp--ie .pswp__img {
+  width: 100%;
+  height: auto;
+  left: 0;
+  top: 0; }
+
+/*
+	Error message appears when image is not loaded
+	(JS option errorMsg controls markup)
+*/
+.pswp__error-msg {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  line-height: 16px;
+  margin-top: -8px;
+  color: #CCC; }
+
+.pswp__error-msg a {
+  color: #CCC;
+  text-decoration: underline; }
