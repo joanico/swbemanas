@@ -7,7 +7,7 @@ from django.shortcuts import render
 
 
 class Index(TemplateView):
-    template_name = 'marobo/index.html'
+    template_name = 'marobo/base.html'
     
 
 class Mapa(TemplateView):

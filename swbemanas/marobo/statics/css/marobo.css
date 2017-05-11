@@ -1,0 +1,16 @@
+body{
+    background-color:#FFFFFF;
+    font-family: ProximaNovaA-Regular;
+    font-size: 13px;
+    color: #3d464d;
+}
+
+.container {
+    padding-right: 2%;
+    padding-left: 3%;
+}
+
+.col-md-4 header{
+    background-color: red;
+}
+

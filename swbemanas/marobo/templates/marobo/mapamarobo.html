@@ -1,4 +1,4 @@
-{% extends 'marobo/index.html' %}
+{% extends 'marobo/base.html' %}
 
 {% load static %}
 
@@ -31,12 +31,18 @@
 	</style>
 
 	<script type="text/javascript">
+    function initMap() {
+        var uluru = {lat: -8.990, lng: 125.314};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
 
-    function map_init_basic (map, options) {
-        ...
-        L.marker([127.4, -8.0]).addTo(map);
-        ...
-    }
 	</script>
 
 {% leaflet_map "yourmap" callback="window.map_init_basic" %}
