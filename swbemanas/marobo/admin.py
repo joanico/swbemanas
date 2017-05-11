@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import Population
 
-# Register your models here.
+class PopulationAdmin(admin.ModelAdmin):
+    pass
+admin.site.register(Population, PopulationAdmin)
