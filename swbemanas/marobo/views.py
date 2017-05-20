@@ -12,3 +12,7 @@ class Index(TemplateView):
 
 class Mapa(TemplateView):
     template_name = 'marobo/mapamarobo.html'
+
+
+class Blog(TemplateView):
+    template_name = 'marobo/blog.html'

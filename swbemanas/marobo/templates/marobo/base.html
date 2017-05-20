@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+  
     <head>
-		<meta charset="UTF-8" />
+        <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <title>Catalpa International - software and design for the developing world</title>
@@ -9,40 +10,62 @@
         <meta name="author" content="">
         
         <link rel="shortcut icon" href="{{ STATIC_URL }}img/favicon_32.ico">
-
-		<title>
-             {% block title %}
-			 	<h3>Marobo</h3>
-             {% endblock %}
-		</title>
-	</head>
+        <link href="{{STATIC_URL}}style.css" rel="stylesheet" type="text/css">
+        
+        <!--SCRIPTS-->
+        
+        <script src="{{ STATIC_URL }}js/jquery-1.11.3.min.js"></script>
+        <script src="{{ STATIC_URL }}js/modernizr.custom.js"></script>
+        <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+        <script src="{{ STATIC_URL }}js/owl.carousel.min.js"></script>
+        <script src="{{ STATIC_URL }}js/classie.js"></script>
+        <script src="{{ STATIC_URL }}js/skrollr.min.js"></script>
+        <script src="{{ STATIC_URL }}js/photoswipe.min.js"></script>
+        <script src="{{ STATIC_URL }}js/photoswipe-ui-default.min.js"></script>
+        
+    
+        {% block script %}
+        {% endblock %}
+            
+            
+        <!--STYLESHEETS-->
+         
+        <link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet">
+        <link href="{{ STATIC_URL }}css/bootflat.css" rel="stylesheet">
+        <link href="{{ STATIC_URL }}css/font-awesome.css" rel="stylesheet">
+        <link href="{{ STATIC_URL }}css/entypo.css" rel="stylesheet">
+        <link href="{{ STATIC_URL }}css/studio.css" rel="stylesheet">
+        <link href="{{ STATIC_URL }}css/owl.carousel.css" rel="stylesheet">
+        <link href="{{ STATIC_URL }}css/owl.theme.css" rel="stylesheet">
+        <link href="{{ STATIC_URL }}css/avenir_font.css" rel="stylesheet" >
+        <link href="{{ STATIC_URL }}css/marobo.css" rel="stylesheet" >
+    
+        {% block style %}
+        {% endblock %}
+    
+    </head>
+      
 	<body>
-		<nav class="navbar navbar-inverse">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12 header">
 
-						{% block header %}
-							<h1>BemVindo Marobo</h1>
-							<p>Obrigado, tanba ita boot visita ona blog ne.</p>
-						{% endblock %}
+		{% block header %}
+			<nav class="navbar navbar-default" role="navigation">
+				<div class="container">
+					<div class="rows">
+						<div class="col-md-12"
+							<h3>WELCOME HOTSPRING MAROBO</h3>
+						</div>
 					</div>
 				</div>
-			</div>
-		</nav>
-		{% block content %}
-		<div class="container-fluid">
-            <div class="row">
-				<div class="col-md-12">
-					<p> Marobo 2012 : Ba maluk sira nebe mak seidauk/nunka visita Marobo</p>
-					Distrito Bobonaro, konsiste hosi sub distrito nen (6), mak hanesan 
-					Marobo nia linha fronteiraa. 
-				</div>
-			</div>
-		</div>
+			</nav>
 		{% endblock %}
 
-		{% block footer %}
-		{% endblock %}
-	</body>
+        {% block content %}
+			<p> Mai ita aprende hamutuk konaba django </p>
+        {% endblock %}
+
+        {% block footer %}
+			<p>Koko para hatene</p>
+        {% endblock %}
+
+    </body>
 </html>

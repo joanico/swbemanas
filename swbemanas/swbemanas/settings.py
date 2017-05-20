@@ -56,7 +56,7 @@ ROOT_URLCONF = 'swbemanas.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -119,10 +119,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
-STATIC_URL = '/statici/'
+STATIC_URL = '/static/'
+
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "statics"),
+    os.path.join(BASE_DIR, "static"),
 )
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 LEAFLET_CONFIG = {
     'SPATIAL_EXTENT': (124.3, -9.9, 127.4, -8.0),
     #'DEFAULT_CENTER': (-8.0, 125.0),

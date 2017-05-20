@@ -1,0 +1,20 @@
+body{
+    font-family: "AvenirLTStd-Book";
+    height: 100%;
+    background: blue;
+}
+
+nav.navbar.navbar-default {
+    background: cadetblue;
+}
+
+.container {
+    margin-right: 60px;
+    padding-bottom: 60px;
+    background-color: blue;
+}
+
+.rows {
+    margin: 60px;
+    padding: 6px;
+}
