@@ -1,0 +1,85 @@
+{% extends 'marobo/base.html' %}
+
+
+{% block header %}
+
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{% url 'index' %}"><img src="{{ STATIC_URL }}img/catalpa_logo.png" class="catalpa-logo" alt="Catalpa Logo" /></a>
+      <a class="hiring" href="{% url 'jobs' %}">We are hiring!</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav pull-right">
+        <li><a type="button" role="button" href="{% url 'about_us' %}">About</a></li>
+        <li><a type="button" role="button" href="{% url 'projects' %}">Projects</a></li>
+<!--        <li><a href="/products.html">Products</a></li>-->
+        <li><a type="button" role="button" href="{% url 'services' %}">Services</a></li>
+        <li><a type="button" role="button" href="{% url 'blog' %}">Blog</a></li>
+        <li><a type="button" role="button" href="{% url 'contact' %}">Contact</a></li>
+        <li><a type="button" role="button" href="https://www.facebook.com/CatalpaInternational" class="social-icons"><span class="entypo-social c-facebook"></span></a></li>
+        <li><a type="button" role="button" href="https://twitter.com/CatalpaDev" class="social-icons"><span class="entypo-social c-twitter"></span></a></li>
+
+      </ul>
+     </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+{% endblock %}
+
+
+{% block content %}
+{% endblock %}
+
+
+{% block footer %}
+
+    <footer>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    <img class="footer_logo"src="{{ STATIC_URL }}img/Catalpa.png" alt="" />
+                </div>
+                <div class="col-md-3">
+                    <ul class="list-unstyled footer_ul">
+                        <li><a href="{% url 'about_us' %}">about</a></li>
+                        <li><a href="{% url 'projects' %}">projects</a></li>
+                        <li><a href="{% url 'services' %}">services</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <ul class="list-unstyled footer_ul">
+                        <li><a href="{% url 'blog' %}">blog</a></li>
+                        <li><a href="{% url 'jobs' %}">jobs</a></li>
+                        <li><a href="{% url 'contact' %}">contact us</a></li>
+                        <li><a href="{% url 'list' %}">members</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <p class="copyright-info ">&copy; Catalpa International Ltd {% now "Y" %}</p>
+        </div><!-- /container -->
+    </footer>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-33234232-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+
+{% endblock %}
