@@ -121,6 +121,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# Add static folder to STATIC_DIRS
+STATICFILES_DIRS = [
+os.path.join(BASE_DIR, "static"),
+]
+
 LEAFLET_CONFIG = {
     'SPATIAL_EXTENT': (124.3, -9.9, 127.4, -8.0),
     #'DEFAULT_CENTER': (-8.0, 125.0),
@@ -128,3 +133,5 @@ LEAFLET_CONFIG = {
     #'MIN_ZOOM': 3,
     #'MAX_ZOOM': 18,
 }
+
+LOGIN_REDIRECT_URL = '/' # It means home view
