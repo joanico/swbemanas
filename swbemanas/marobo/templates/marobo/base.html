@@ -1,4 +1,5 @@
 {% load staticfiles %}
+{% load leaflet_tags %}
 
 <!DOCTYPE html>
 <html>
@@ -9,6 +10,11 @@
         <!-- Core CSS - Include with every page -->
         <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
         <link href="{% static 'css/jquery.min.js' %}" rel="stylesheet">
+        <link href="{% static 'css/site.css' %}" rel="stylesheet">
+		<!--[if IE 8]><script src="{% static "leaflet/eventlister.ie8.js" %}"></script><!--<![endif]-->
+		<!--[if lt IE 8]><script src="{% static "leaflet/eventlister.ie6-7.js" %}"></script><!--<![endif]-->
+		{% leaflet_js %}
+		{% leaflet_css %}
     </head>
     <body>
         <nav class="navbar navbar-default">
@@ -21,6 +27,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="/">Home</a>
+                    <a class="navbar-brand" href="{% url 'mapamarobo' %}">Tourism</a>
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
