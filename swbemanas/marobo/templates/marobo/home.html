@@ -1,11 +1,24 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
     <div class="container">
         <div class="row">
+			<div class="col-md-12">
+				<img class="logo" src="{% static 'img/agrikultor.jpg'  %}" width="900" height="550" alt="Logo" />
+                <span class="text_project"> Project Innovative <br> Innovation in Timor Leste </span>
+			</div>
+		</div>
+        <div class="row innovation">
+			<div class="col-md-8 .col-md-offset-4">
+                <span class="text_innovation">Only continued investment in innovation can ensure future cancer treatment breakthroughs.
+               THAT'S OUR MISSON.</span>
+            </div>
+        </div>
+        <div class="row">
 			<div class="col-xs-6 col-md-4">
 				<a href="#" class="thumbnail">
-				  <img src="..." alt="...">
+                  <img class="logo_edukasaun" src="{% static 'img/edukasaun.jpg'  %}" width="200" height="200"alt="Edukasaun" />
 				</a>
 				<div class="jumbotron">
 					<h3>Edukasaun!</h3>
@@ -15,7 +28,7 @@
 			</div>
 			<div class="col-xs-6 col-md-4">
 				<a href="#" class="thumbnail">
-				  <img src="..." alt="...">
+                  <img class="logo_saude" src="{% static 'img/saude.jpg'  %}" width="200" height="200 "alt="Saude" />
 				</a>
 				<div class="jumbotron">
 					<h3>Saude!</h3>
@@ -25,7 +38,7 @@
 			</div>
 			<div class="col-xs-6 col-md-4">
 				<a href="#" class="thumbnail">
-				  <img src="..." alt="...">
+                  <img class="logo_agrikultor" src="{% static 'img/agrikultor1.jpg' %}" width="200" height="117" alt="Agrikultor" />
 				</a>
 				<div class="jumbotron">
 					<h3>Agrikultura!</h3>
