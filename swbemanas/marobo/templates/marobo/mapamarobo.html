@@ -2,33 +2,17 @@
 
 {% load static %}
 
-{% block header %}
-
+{% block content %}
     {% load leaflet_tags %}
-	<head>
 		<!--[if IE 8]><script src="{% static "leaflet/eventlister.ie8.js" %}"></script><!--<![endif]-->
 		<!--[if lt IE 8]><script src="{% static "leaflet/eventlister.ie6-7.js" %}"></script><!--<![endif]-->
 		{% leaflet_js %}
 		{% leaflet_css %}
-	</head>
-{% endblock %}
 
-{% block content %}
 	<p>Mai ita hare hamutuk konaba marobo nia furak</p>
 	<div class="leaflet_map">
          {% leaflet_map "yourmap" %}
     </div>
-
-	<style>
-		.leaflet-container {  /* all maps */
-			width:  900px;
-			height: 400px;
-		}
-
-		#specialbigmap {
-			height: 800px;
-		}
-	</style>
 
 	<script type="text/javascript">
 
@@ -40,7 +24,6 @@
 	</script>
 
 {% leaflet_map "yourmap" callback="window.map_init_basic" %}
-
 
 {% endblock %}
 

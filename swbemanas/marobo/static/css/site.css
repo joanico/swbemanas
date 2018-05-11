@@ -1,3 +1,20 @@
+body{
+    font-family:ProximaNovaA-Regular;
+    background-color:#FFFFFF;
+    font-size: 13px;
+    color: #3d464d;
+}
+
+.header{
+    background: #fff;
+    padding-top: 30px;
+    padding-bottom: 30px;
+	padding-left: 0px;
+    padding-right: 0px;
+    font-size:15px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
 .navbar.navbar-default {
 	box-sizing: border-box;
     background-color: #f4f4f4;
@@ -6,6 +23,12 @@
     border: none;
     margin-bottom: 5px;
 	padding-top: 10px;
+}
+
+.navbar-default .navbar-brand {
+    color: #777;
+	font-family: ProximaNovaA-bold;
+	font-size: 20px;	
 }
 
 .container {
@@ -27,3 +50,51 @@
     font-weight: 200;
 }
 
+.logo_edukasaun{
+	width: 347px;
+}
+
+.logo_saude{
+	width: 290px;
+}
+
+.logo_agrikultor{
+	width: 235px;
+}
+
+.leaflet-container {  /* all maps */
+	width:  900px;
+	height: 400px;
+}
+
+#specialbigmap {
+	height: 800px;
+}
+
+.logo {
+	margin-top: -5px;
+	display: inline-block;
+	width: 940px;
+	height: 368px;
+}
+
+.text_project {
+	position: relative;
+    bottom: 319px;
+    left: 290px;
+    font-size: 30px;
+    font-family: ProximaNovaA-bold;
+    color: white;
+    text-align: center;
+}
+
+.text_innovation{
+	position: relative;
+    bottom: 50px;
+	left: 120px;
+	font-size: 3rem;
+    font-family: Raleway, sans-serif;
+    letter-spacing: 0.075rem;
+    text-transform: none;
+    font-weight: normal;
+}
