@@ -7,9 +7,8 @@ from django.views.generic.edit import CreateView
 from .models import Suco, Population, Aldeia
 
 
-@login_required(login_url="login/")
 def home(request):
-    return render(request, "home.html")
+    return render(request, "marobo/home.html")
 
 
 class Mapa(TemplateView):
