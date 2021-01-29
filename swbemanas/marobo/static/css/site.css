@@ -50,16 +50,8 @@ body{
     font-weight: 200;
 }
 
-.logo_edukasaun{
-	width: 347px;
-}
-
-.logo_saude{
-	width: 290px;
-}
-
-.logo_agrikultor{
-	width: 235px;
+.img-responsive{
+	width: 100%;
 }
 
 .leaflet-container {  /* all maps */
@@ -72,10 +64,11 @@ body{
 }
 
 .logo {
-	margin-top: -5px;
-	display: inline-block;
-	width: 940px;
-	height: 368px;
+    margin-top: -5px;
+    display: inline-block;
+    width: 1134px;
+    height: 570px;
+    margin-bottom: 20px;
 }
 
 .text_project {

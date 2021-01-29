@@ -7,13 +7,13 @@ from django.views.generic.edit import CreateView
 from .models import Suco, Population, Aldeia
 
 
+@login_required(login_url="login/")
 def home(request):
     return render(request, "marobo/home.html")
 
 
 class Mapa(TemplateView):
     template_name = 'marobo/mapamarobo.html'
-
 
 class PopulationView(TemplateView):
     template_name = 'marobo/suco.html'
