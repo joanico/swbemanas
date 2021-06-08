@@ -8,7 +8,7 @@ from .models import Post, PostImage
 
 
 def home(request):
-    return render(request, "marobo/index.html")
+    return render(request, "marobo/home.html")
 
 
 class Mapa(TemplateView):
