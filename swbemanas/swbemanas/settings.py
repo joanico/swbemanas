@@ -55,7 +55,7 @@ ROOT_URLCONF = 'swbemanas.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ["marobo/templates/marobo"],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -119,18 +119,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
-
-# Add static folder to STATIC_DIRS
 STATICFILES_DIRS = [
-os.path.join(BASE_DIR, "static"),
+    os.path.join(BASE_DIR, 'static'),
 ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
 
-LEAFLET_CONFIG = {
-    'SPATIAL_EXTENT': (124.3, -9.9, 127.4, -8.0),
-    #'DEFAULT_CENTER': (-8.0, 125.0),
-    #'DEFAULT_ZOOM': 16,
-    #'MIN_ZOOM': 3,
-    #'MAX_ZOOM': 18,
-}
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 
 LOGIN_REDIRECT_URL = '/' # It means home view

@@ -1,6 +1,18 @@
 from django.contrib import admin
-from .models import Population, Suco, Aldeia
+from .models import Image, Post, PostImage 
 
-admin.site.register(Population)
-admin.site.register(Suco)
-admin.site.register(Aldeia)
+class PostImageAdmin(admin.StackedInline):
+    model = PostImage
+
+@admin.register(Post)
+class PostAdmin(admin.ModelAdmin):
+    inlines = [PostImageAdmin]
+
+    class Meta:
+       model = Post
+
+@admin.register(PostImage)
+class PostImageAdmin(admin.ModelAdmin):
+    pass
+
+admin.site.register(Image)

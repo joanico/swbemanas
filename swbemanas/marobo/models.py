@@ -1,32 +1,26 @@
 from django.db import models
 
 
-class Population(models.Model):
-    ''' The class of agriculture in marobo '''
-    distrito = models.CharField(max_length=128)
-    sub_distrito = models.CharField(max_length=128)
-    suco = models.CharField(max_length=128)
-    aldeia = models.CharField(max_length=128)
+class Image(models.Model):
+    image_title = models.CharField(max_length=128)
+    image = models.ImageField(upload_to= 'images/')
 
-    def __unicode__(self):
-        return self.suco
+    def __str__(self):
+            return self.image_title
 
 
-class Suco(models.Model):
-    ''' The class of agriculture in marobo '''
-    name = models.CharField(max_length=128)
-    descriptions = models.CharField(max_length=128)
-
-    def __unicode__(self):
-        return self.name
-
-
-class Aldeia(models.Model):
-    ''' The class of agriculture in marobo '''
-    name = models.CharField(max_length=128)
-    populations = models.CharField(max_length=128)
-    suco = models.ForeignKey(Suco, blank=False, null=False)
+class Post(models.Model):
+    title = models.CharField(max_length=128)
     descriptions = models.TextField(blank=True, null=True)
+    image = models.FileField(blank=True)
+    
+    def __str__(self):
+        return self.title
 
-    def __unicode__(self):
-        return self.name
+
+class PostImage(models.Model):
+    post = models.ForeignKey(Post, default=None, on_delete=models.CASCADE)
+    images = models.FileField(upload_to = 'photos/')
+
+    def __str__(self):
+        return self.post.title
