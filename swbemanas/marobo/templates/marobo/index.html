@@ -1,9 +1,36 @@
-{% extends 'marobo/base.html' %}
-{% load i18n %}
+{% extends 'base.html' %}
 {% load static %}
 
-{% block contect %}
-    koko too lao ka lae ?
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+			<div class="col-md-12">
+				<img class="logo" src="{% static 'img/download (5).jpeg'  %}" alt="Logo" />
+                <span class="text_project"> Project Innovative <br> Innovation in Timor Leste </span>
+			</div>
+		</div>
+        <div class="row innovation">
+            <h1 class="text_innovation"><b>Marobo mak fatin ida nebe konesidu ho bemanas. Marobo iha potensialidade oin-oin hanesan bemanas bedois tais-meta uma tradisional</b></h1>
+        </div>
+
+
+    <!-- Grid row -->
+    <div class="row">
+    <!-- the cols in this div change the number of cards per row depending on screen size and the mb-4 adds space below cards if they spill over into the next row-->
+    {% for post in posts %}
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="card">
+                <img class="card-img-top" src="{{ post.image.url }}" alt="Card image cap">
+                <div class="card-body-list">
+                    <h4 class="card-title white-text">{{ post.title }}</h4>
+                    <p class="card-text">{{ post.descriptions|safe|truncatewords_html:30 }}</p>
+                    <a href="{% url 'detail' post.id %}" class="btn btn-primary btn-md">Read more</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+
+</div>
+
 {% endblock %}
-
-

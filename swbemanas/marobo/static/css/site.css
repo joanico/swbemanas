@@ -1,6 +1,6 @@
 body{
     font-family:ProximaNovaA-Regular;
-    background-color:#FFFFFF;
+    background-color:  #eee;
     font-size: 13px;
     color: #3d464d;
 }
@@ -73,9 +73,8 @@ body{
 
 .logo {
 	margin-top: -5px;
-	display: inline-block;
-	width: 940px;
-	height: 368px;
+	min-width: 1110px;
+	max-height: 560px;
 }
 
 .text_project {
@@ -89,12 +88,68 @@ body{
 }
 
 .text_innovation{
-	position: relative;
-    bottom: 50px;
-	left: 120px;
-	font-size: 3rem;
-    font-family: Raleway, sans-serif;
-    letter-spacing: 0.075rem;
-    text-transform: none;
-    font-weight: normal;
+    font-size: 3.8rem;
+    text-align: center;
+    line-height: 1.1;
 }
+
+
+/* Prevent image stretching is it's resized */
+.card-img-top {
+    object-fit: cover;
+    flex-grow: 1;
+    width: 350px;
+    max-height: 200px;
+}
+
+/* Hover effects */
+.card {
+    transition: -webkit-transform 0.3s ease;
+    font-size: 1em;
+    overflow: hidden;
+    border-radius: .28571429rem;
+    box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
+    margin-top:20px;
+    background-color:#FFFFFF;
+}
+.card:hover {
+  transform: scale(1.01, 1.01);
+}
+
+/* Responsive design for image heights */
+@media (min-width: 576px) {
+  .card-img-top {
+    height: 50vw;
+  }
+}
+
+@media (min-width: 768px) {
+  .card-img-top {
+    height: 30vw;
+  }
+}
+
+@media (min-width: 992px) {
+  .card-img-top {
+    height: 20vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  .card-img-top {
+    height: 20vw;
+  }
+}
+
+@media (min-width: 1200px)
+.col-lg-4 {
+    width: 33.33333333%;
+    margin: -7px !important;
+}
+
+.card-body-list{
+    margin: 15px;
+    font-size: 14px;
+    font-family: Raleway, sans-serif;
+}
+
