@@ -15,15 +15,6 @@ class Mapa(TemplateView):
     template_name = 'marobo/mapamarobo.html'
 
 
-class PopulationView(TemplateView):
-    template_name = 'marobo/index.html'
-
-    def get_context_data(self, **kwargs):
-        context = super(PopulationView, self).get_context_data(**kwargs)
-        context['profile'] = Profile.objects.all()
-        return context
-
-
 def blog_view(request):
     posts = Post.objects.all()
     return render(request, 'marobo/index.html', {'posts':posts})
