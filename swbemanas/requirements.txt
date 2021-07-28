@@ -4,7 +4,7 @@ packaging==16.8
 pyparsing==2.2.0
 six==1.10.0
 appdirs==1.4.3
-Django==2.0
+Django==2.2.24
 packaging==16.8
 Pillow==8.2.0
 pyparsing==2.2.0
