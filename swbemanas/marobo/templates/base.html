@@ -1,10 +1,12 @@
 {% load staticfiles %}
 
 <!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Marobo</title>
         <!-- Core CSS - Include with every page -->
         <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}">
@@ -13,23 +15,26 @@
         <link href="{% static 'css/site.css' %}" rel="stylesheet">
     </head>
     <body>
+    <body style="font-size:14px">
         {% block header %}
             <nav class="navbar navbar-default">
                 <div class="container">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="/">Home</a>
+                    <div class="col-xs-4">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="/">Home</a>
+                        </div>
                     </div>
                 </div>
             </nav>
         {% endblock %}
 
-         <div class="container">
+         <div class="content-body">
             {% block content %}
             {% endblock %}
             {% include 'marobo/footer.html' %}
