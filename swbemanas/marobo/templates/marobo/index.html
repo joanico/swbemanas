@@ -2,9 +2,10 @@
 {% load static %}
 
 {% block content %}
-        <div class="row img-content">
-			<div class="col-12">
-				<img class="img-responsive" src="{% static 'img/download (5).jpeg' %}" alt="Logo" />
+    <div class="container">
+        <div class="row">
+			<div class="col-xxl-4">
+				<img class="img-responsive" src="{% static 'img/cover.jpg' %}" alt="Logo" />
 			</div>
 		</div>
         <div class="row innovation">
@@ -13,7 +14,6 @@
 
 
     <!-- Grid row -->
-    <div class="container">
     <div class="row">
     <!-- the cols in this div change the number of cards per row depending on screen size and the mb-4 adds space below cards if they spill over into the next row-->
     {% for post in posts %}

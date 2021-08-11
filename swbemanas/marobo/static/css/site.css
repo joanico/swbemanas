@@ -73,8 +73,10 @@ body{
 
 .img-responsive {
 	margin-top: -5px;
-    width: 90%;
-    padding-left: 45px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: bottom;
 }
 
 .row.innovation {
@@ -82,7 +84,7 @@ body{
 }
 
 .text_innovation{
-    font-size: 2.8rem;
+    font-size: 24px;
     text-align: center;
     line-height: 1.1;
     margin: 10px;
@@ -93,8 +95,8 @@ body{
 .card-img-top {
     object-fit: cover;
     flex-grow: 1;
-    width: 375px;
-    height: 150px;
+    width: 420px;
+    height: 160px;
 }
 
 /* Hover effects */
@@ -102,15 +104,15 @@ body{
     transition: -webkit-transform 0.3s ease;
     font-size: 1em;
     overflow: hidden;
-    border-radius: .28571429rem;
-    box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
-    margin-top:20px;
-    background-color:#FFFFFF;
-    width: 99%;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 5px 3px #ddd, 0 0 0 1px #eee;
+    margin-top: 20px;
+    background-color: #f7f7f7;
+    width: 98%;
 }
 
 .col-12.col-md-6.col-md-4.mb-3 {
-    padding-left: 20px;
+    padding-left: 22px;
 }
 
 .card:hover {
@@ -118,25 +120,6 @@ body{
 }
 
 /* Responsive design for image heights */
-@media (min-width: 576px) {
-  .card-img-top {
-    height: 50vw;
-  }
-}
-
-@media (min-width: 768px) {
-  .card-img-top {
-    height: 30vw;
-    width: 100%;
-  }
-}
-
-@media (min-width: 992px) {
-  .card-img-top {
-    height: 20vw;
-  }
-}
-
 @media (min-width: 1200px)
 .col-lg-4 {
     width: 33.33333333%;
@@ -145,6 +128,12 @@ body{
 @media (min-width: 992px)
 .col-md-6 {
     width: 45% !important;
+}
+
+.container {
+  @media (min-width: @screen-xlg-min) {
+    width: @container-xlg;
+  }
 }
 
 .card-body-list{
@@ -187,7 +176,7 @@ p.footer-text {
 .detail-page {
     font-size: 20px;
     font-family: sans-serif;
-    margin: 35px;
+    margin: 18px;
 }
 
 .image-item {
@@ -196,3 +185,12 @@ p.footer-text {
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: @screen-sm-min) { ... }
+
+p.description {
+    font-size: large;
+}
+
+.btnTest{
+   background:url('img/back.png') no-repeat left center;
+   padding-left:20px;
+}
