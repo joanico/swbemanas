@@ -190,7 +190,18 @@ p.description {
     font-size: large;
 }
 
-.btnTest{
-   background:url('img/back.png') no-repeat left center;
-   padding-left:20px;
+.card.my-3 {
+    margin: 15px;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #3c763d;
+    border-color: #3c763d;
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #1380ee;
+    border-color: #1380ee;
 }
