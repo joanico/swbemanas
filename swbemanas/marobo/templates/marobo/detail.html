@@ -2,24 +2,27 @@
 
 {% block content %}
 <!--Carousel Wrapper-->
-<div class="detail-page">
-    <h1>{{post.title}}</h1>
-    <p>{{ post.descriptions }}</p>
-    <div class="image-detail">
-        <h3>Photo Sira</h3><br>
-        {% for p in photos %}
-        <div class="row">
-              <div class="col">
-            <div class="thumbnail">
-                {% if p.images %}
-                    <img src="{{p.images.url }}" class="img-responsive" style="width:100%;" alt="Image">
-                {% else %}
-                    <h3>Iha ne'e la iha photo</h3>
-                {% endif %}
+<div class="container">
+    <a href="{% url 'blog' %}" class="btnTest">Back</a>
+    <div class="detail-page">
+        <h1>{{post.title}}</h1>
+        <p class="description">{{ post.descriptions }}</p>
+        <div class="image-detail">
+            <h3>Photo Sira</h3><br>
+            {% for p in photos %}
+            <div class="col-md-6 col-lg-4">
+                <div class="card my-3">
+                    <div class="card-thumbnail">
+                    {% if p.images %}
+                        <img src="{{p.images.url }}" class="img-responsive" style="width: 100%; height: auto;" alt="Image">
+                    {% else %}
+                        <h3>Iha ne'e la iha photo</h3>
+                    {% endif %}
+                </div>
+              </div>
             </div>
-          </div>
+            {% endfor %}
         </div>
-        {% endfor %}
     </div>
 </div>
 
