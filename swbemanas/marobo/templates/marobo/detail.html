@@ -3,7 +3,7 @@
 {% block content %}
 <!--Carousel Wrapper-->
 <div class="container">
-    <a href="{% url 'blog' %}" class="btnTest">Fila</a>
+    <a href="{% url 'blog' %}" class="btnBack">Fila</a>
     <div class="detail-page">
         <h1>{{post.title}}</h1>
         <p class="description">{{ post.descriptions }}</p>
@@ -14,7 +14,7 @@
                 <div class="card my-3">
                     <div class="card-thumbnail">
                     {% if p.images %}
-                        <a href="javascript:void(0);" class="" data-toggle="modal" data-target="#tutorialsplaneModal">
+                    <a href="javascript:void(0);" class="" data-toggle="modal" data-target="#tutorialsplaneModal_{{ p.id }}">
                             <img src="{{p.images.url }}" class="img-responsive" style="width: 100%; height: auto;" alt="Image">
                         </a>
                     {% else %}
@@ -24,7 +24,7 @@
               </div>
             </div>
             <!-- display modal -->
-            <div id="tutorialsplaneModal" class="modal fade" role='dialog'>
+            <div id="tutorialsplaneModal_{{ p.id }}" class="modal fade" role='dialog'>
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -44,9 +44,5 @@
         </div>
     </div>
 </div>
-
-
-
-
 {% endblock %}
 

@@ -78,10 +78,11 @@ span.logo {
 }
 
 .text_innovation{
-    font-size: 24px;
+    font-size: 21px;
     text-align: center;
-    line-height: 1.1;
-    margin: 10px;
+    line-height: normal;
+    margin: 0px;
+    font-family: 'FontAwesome';
 }
 
 
@@ -185,6 +186,11 @@ i.fa:hover {
 
 .image-item {
     margin: 15px;
+}
+
+a.btnBack {
+    font-size: 20px;
+    margin: 20px;
 }
 
 /* Small devices (tablets, 768px and up) */
