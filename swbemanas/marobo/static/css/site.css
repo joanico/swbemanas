@@ -1,5 +1,5 @@
 body{
-    font-family:ProximaNovaA-Regular;
+    font-family: 'Raleway', sans-serif;
     background-color:  #eee;
     font-size: 13px;
     color: #3d464d;
@@ -50,16 +50,10 @@ body{
     font-weight: 200;
 }
 
-.logo_edukasaun{
-	width: 347px;
-}
-
-.logo_saude{
-	width: 290px;
-}
-
-.logo_agrikultor{
-	width: 235px;
+span.logo {
+    font-family: cursive;
+    font-size: larger;
+    color: darkcyan;
 }
 
 .leaflet-container {  /* all maps */
@@ -142,6 +136,7 @@ body{
     font-family: Raleway, sans-serif;
 }
 
+/* FOOTER */
 .footer-copyright.text-center.py-3 {
     background-color: darkgrey;
     padding: 40px;
@@ -149,11 +144,13 @@ body{
 
 p.footer-text {
     margin: 23px;
+    color: white;
 }
 
 .footer {
-    background: #DFDFDF;
+    background-color: #105469 !important;
     padding: 10px 0;
+    margin-top: 10px;
 }
 
 .footer a {
@@ -171,6 +168,13 @@ p.footer-text {
     margin: 15px;
 }
 
+.fa {
+    color: white;
+}
+
+i.fa:hover {
+    color: blue;
+}
 
 /* Responsive design for image heights */
 .detail-page {
