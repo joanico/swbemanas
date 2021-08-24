@@ -91,7 +91,7 @@ span.logo {
     object-fit: cover;
     flex-grow: 1;
     width:100%;
-    height: auto;
+    height: 180px;
 }
 
 /* Hover effects */
@@ -99,11 +99,14 @@ span.logo {
     transition: -webkit-transform 0.3s ease;
     font-size: 1em;
     overflow: hidden;
-    border-radius: 1rem;
-    box-shadow: 0px 0px 5px 3px #ddd, 0 0 0 1px #eee;
     margin-top: 20px;
     background-color: #f7f7f7;
-    width: 98%;
+    border-radius: 8px;
+    border: 1px solid #d9e2e7;
+    box-shadow: 0 5px 10px 0 rgb(42 57 66 / 20%);
+    background-color: #fafdff;
+    height: 400px;
+    max-width: 370px;
 }
 
 .col-12.col-md-6.col-md-4.mb-3 {
