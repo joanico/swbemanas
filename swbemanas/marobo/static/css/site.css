@@ -67,8 +67,6 @@ span.logo {
 
 .img-responsive {
 	margin-top: -5px;
-    width: 100%;
-    height: auto;
     object-fit: cover;
     object-position: bottom;
 }
