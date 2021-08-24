@@ -90,8 +90,8 @@ span.logo {
 .card-img-top {
     object-fit: cover;
     flex-grow: 1;
-    width: 420px;
-    height: 160px;
+    width:100%;
+    height: auto;
 }
 
 /* Hover effects */
