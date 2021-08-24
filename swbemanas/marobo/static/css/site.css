@@ -1,5 +1,5 @@
 body{
-    font-family:ProximaNovaA-Regular;
+    font-family: 'Raleway', sans-serif;
     background-color:  #eee;
     font-size: 13px;
     color: #3d464d;
@@ -50,16 +50,10 @@ body{
     font-weight: 200;
 }
 
-.logo_edukasaun{
-	width: 347px;
-}
-
-.logo_saude{
-	width: 290px;
-}
-
-.logo_agrikultor{
-	width: 235px;
+span.logo {
+    font-family: cursive;
+    font-size: larger;
+    color: darkcyan;
 }
 
 .leaflet-container {  /* all maps */
@@ -73,8 +67,6 @@ body{
 
 .img-responsive {
 	margin-top: -5px;
-    width: 100%;
-    height: auto;
     object-fit: cover;
     object-position: bottom;
 }
@@ -84,10 +76,11 @@ body{
 }
 
 .text_innovation{
-    font-size: 24px;
+    font-size: 21px;
     text-align: center;
-    line-height: 1.1;
-    margin: 10px;
+    line-height: normal;
+    margin: 0px;
+    font-family: 'FontAwesome';
 }
 
 
@@ -95,8 +88,8 @@ body{
 .card-img-top {
     object-fit: cover;
     flex-grow: 1;
-    width: 420px;
-    height: 160px;
+    width:100%;
+    height: 180px;
 }
 
 /* Hover effects */
@@ -104,11 +97,14 @@ body{
     transition: -webkit-transform 0.3s ease;
     font-size: 1em;
     overflow: hidden;
-    border-radius: 1rem;
-    box-shadow: 0px 0px 5px 3px #ddd, 0 0 0 1px #eee;
     margin-top: 20px;
     background-color: #f7f7f7;
-    width: 98%;
+    border-radius: 8px;
+    border: 1px solid #d9e2e7;
+    box-shadow: 0 5px 10px 0 rgb(42 57 66 / 20%);
+    background-color: #fafdff;
+    height: 400px;
+    max-width: 370px;
 }
 
 .col-12.col-md-6.col-md-4.mb-3 {
@@ -142,6 +138,7 @@ body{
     font-family: Raleway, sans-serif;
 }
 
+/* FOOTER */
 .footer-copyright.text-center.py-3 {
     background-color: darkgrey;
     padding: 40px;
@@ -149,11 +146,13 @@ body{
 
 p.footer-text {
     margin: 23px;
+    color: white;
 }
 
 .footer {
-    background: #DFDFDF;
+    background-color: #105469 !important;
     padding: 10px 0;
+    margin-top: 10px;
 }
 
 .footer a {
@@ -171,6 +170,13 @@ p.footer-text {
     margin: 15px;
 }
 
+.fa {
+    color: white;
+}
+
+i.fa:hover {
+    color: blue;
+}
 
 /* Responsive design for image heights */
 .detail-page {
@@ -181,6 +187,11 @@ p.footer-text {
 
 .image-item {
     margin: 15px;
+}
+
+a.btnBack {
+    font-size: 20px;
+    margin: 20px;
 }
 
 /* Small devices (tablets, 768px and up) */
