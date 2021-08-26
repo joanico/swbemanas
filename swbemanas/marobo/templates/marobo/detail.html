@@ -6,7 +6,7 @@
     <a href="{% url 'blog' %}" class="btnBack">Fila</a>
     <div class="detail-page">
         <h1>{{post.title}}</h1>
-        <p class="description">{{ post.descriptions }}</p>
+        <p class="description">{{ post.descriptions|safe|truncatewords_html:5000 }}</p>
         <div class="image-detail">
             {% for p in photos %}
             <div class="col-md-6 col-lg-4">
