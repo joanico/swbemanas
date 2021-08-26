@@ -1,4 +1,5 @@
 from django.db import models
+from tinymce.models import HTMLField
 
 
 class Image(models.Model):
@@ -11,7 +12,7 @@ class Image(models.Model):
 
 class Post(models.Model):
     title = models.CharField(max_length=128)
-    descriptions = models.TextField(blank=True, null=True)
+    descriptions = HTMLField(blank=True, null=True)
     image = models.FileField(blank=True)
     
     def __str__(self):
