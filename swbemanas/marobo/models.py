@@ -25,4 +25,4 @@ class PostImage(models.Model):
     name = models.CharField(max_length=128)
 
     def __str__(self):
-        return self.post.title
+        return self.name

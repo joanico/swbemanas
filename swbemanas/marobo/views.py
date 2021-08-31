@@ -10,11 +10,6 @@ from .models import Post, PostImage
 def home(request):
     return render(request, "marobo/home.html")
 
-
-class Mapa(TemplateView):
-    template_name = 'marobo/mapamarobo.html'
-
-
 def blog_view(request):
     posts = Post.objects.all()
     return render(request, 'marobo/index.html', {'posts':posts})
