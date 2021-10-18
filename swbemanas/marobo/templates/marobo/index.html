@@ -1,61 +1,31 @@
 {% extends 'base.html' %}
 {% load static %}
 
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" rel="stylesheet"/>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 {% block content %}
+    <div class="col-xxl-4">
+        <img class="img-responsive" src="{% static 'img/cover.jpg' %}" alt="Logo" />
+    </div>
     <div class="container">
-        <div class="row">
-			<div class="col-xxl-4">
-				<img class="img-responsive" src="{% static 'img/cover.jpg' %}" alt="Logo" />
-			</div>
-        <form>
-            <label for="fromDate">From </label>
-            <input type="date" id="fromDate" class="fromDate" name="fromDate" select=":first" required="" style="width: 400px; margin: 8px;" />
-            <label for="toDate">to</label>
-            <input type="date" id="toDate" class="toDate" name="toDate" select=":last" required="" style="width: 400px; margin: 8px;" />
-        </form>
-		</div>
         <div class="row innovation">
             <h1 class="text_innovation"><b>Marobo mak fatin ida nebe konesidu ho bemanas. Marobo iha fatin turismu hanesan bemanas bedois no tradisaun hanesan tais-metan uma tradisional</b></h1>
         </div>
 
 
-    <!-- Grid row -->
-    <div class="row">
-    <!-- the cols in this div change the number of cards per row depending on screen size and the mb-4 adds space below cards if they spill over into the next row-->
-    {% for post in posts %}
-        <div class="col-12 col-md-6 col-md-4 mb-3">
-            <div class="w3-card">
-                <img class="card-img-top" src="{{ post.image.url }}" alt="Card image cap">
-                <div class="card-body-list">
-                    <h4 class="card-title white-text">{{ post.title }}</h4>
-                    <p class="card-text">{{ post.descriptions|safe|truncatewords_html:25 }}</p>
-                    <a href="{% url 'detail' post.id %}" class="btn btn-primary btn-md">Hare detallu</a>
+        <!-- Grid row -->
+        <div class="row">
+        <!-- the cols in this div change the number of cards per row depending on screen size and the mb-4 adds space below cards if they spill over into the next row-->
+        {% for post in posts %}
+            <div class="col-12 col-md-6 col-md-4 mb-3">
+                <div class="w3-card">
+                    <img class="card-img-top" src="{{ post.image.url }}" alt="Card image cap">
+                    <div class="card-body-list">
+                        <h4 class="card-title white-text">{{ post.title }}</h4>
+                        <p class="card-text">{{ post.descriptions|safe|truncatewords_html:25 }}</p>
+                        <a href="{% url 'detail' post.id %}" class="btn btn-primary btn-md">Hare detallu</a>
+                    </div>
                 </div>
             </div>
+        {% endfor %}
         </div>
-    {% endfor %}
     </div>
-    </div>
-    <script>
-        $(document).ready(function(){
-           $("#fromDate").datepicker({
-               format: 'dd-mm-yyyy',
-               autoclose: true,
-           }).on('changeDate', function (selected) {
-               var minDate = new Date(selected.date.valueOf());
-               $('#toDate').datepicker('setStartDate', minDate);
-           });
-
-           $("#toDate").datepicker({
-               format: 'dd-mm-yyyy',
-               autoclose: true,
-           }).on('changeDate', function (selected) {
-                   var minDate = new Date(selected.date.valueOf());
-                   $('#fromDate').datepicker('setEndDate', minDate);
-           });
-        });
-            </script>
 {% endblock %}

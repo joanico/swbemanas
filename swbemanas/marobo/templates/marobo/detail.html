@@ -2,14 +2,14 @@
 
 {% block content %}
 <!--Carousel Wrapper-->
-<div class="container">
-    <a href="{% url 'blog' %}" class="btnBack">Fila</a>
+<div class="container detail">
+    <a href="{% url 'blog' %}" class="btn btn-default">Fila</a>
     <div class="detail-page">
         <p class="description-text">{{ post.descriptions|safe|truncatewords_html:5000000 }}</p>
         <div class="image-detail">
             {% for p in photos %}
             <div class="col-md-6 col-lg-4">
-                <div class="card my-3">
+                <div class="card my-4">
                     <div class="card-thumbnail">
                     {% if p.images %}
                     <a href="javascript:void(0);" class="" data-toggle="modal" data-target="#tutorialsplaneModal_{{ p.id }}">
@@ -17,6 +17,9 @@
                             <p class="label-image">{{ p.name }}</h4>
                         </a>
                     {% else %}
+                        <video width="530" height="440" controls autoplay>
+                            <source src="{{ p.images.url }}" type="video/mp4"> </source>
+                        </video>
                         <h3>Iha ne'e la iha photo</h3>
                     {% endif %}
                 </div>

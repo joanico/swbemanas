@@ -18,10 +18,10 @@ body{
 .navbar.navbar-default {
 	box-sizing: border-box;
     background-color: #f4f4f4;
-    min-height: 90px;
+    min-height: 70px;
     width: auto;
     border: none;
-    margin-bottom: 5px;
+    margin-bottom: 2px;
 	padding-top: 10px;
 }
 
@@ -51,7 +51,7 @@ body{
 }
 
 span.logo {
-    font-family: cursive;
+    font-family: 'FontAwesome';
     font-size: larger;
     color: darkcyan;
 }
@@ -70,8 +70,9 @@ span.logo {
     object-fit: cover;
     object-position: bottom;
 	width:  100%;
-	height: auto;
-
+	height: 450px;
+    border-bottom-right-radius: 50% 5%;
+    border-bottom-left-radius: 50% 5%;
 }
 
 .row.innovation {
@@ -176,11 +177,14 @@ i.fa:hover {
     color: blue;
 }
 
-/* Responsive design for image heights */
+/* Detail Page Responsive design for image heights */
 .detail-page {
     font-size: 16px;
     font-family: sans-serif;
-    margin: 18px;
+}
+
+.container.detail {
+    background-color: #e3e4e4;
 }
 
 p.label-image {
@@ -192,9 +196,18 @@ p.label-image {
     margin: 15px;
 }
 
-a.btnBack {
-    font-size: 20px;
-    margin: 20px;
+a.btn.btn-default {
+    border-radius: 10px;
+    color: #fff;
+    background-color: #3c763d;
+    border-color: #3c763d;
+    margin-top: 10px;
+}
+
+a.btn.btn-default:hover {
+    color: #fff;
+    background-color: #1380ee;
+    border-color: #1380ee;
 }
 
 /* Small devices (tablets, 768px and up) */
@@ -202,6 +215,12 @@ a.btnBack {
 
 p.description {
     font-size: large;
+}
+
+p.description-text {
+    text-align: left;
+    margin: 20px;
+    padding-top: 0px;
 }
 
 .card.my-3 {
