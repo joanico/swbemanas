@@ -16,29 +16,17 @@
     </head>
     <body>
     <body style="font-size:14px">
-        {% block header %}
-            <nav class="navbar navbar-default">
-                <div class="container">
-                    <div class="col-xs-4">
-                        <div class="navbar-header">
-                            <a class="navbar-brand" href="/">
-                                <span class="logo">Marobo</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        {% endblock %}
 
-         <div class="content-body">
-            {% block content %}
-            {% endblock %}
-            {% include 'marobo/footer.html' %}
+        {% include 'marobo/header.html' %}
+        {% block content %}
+        {% endblock %}
+        {% include 'marobo/footer.html' %}
          </div>
 
         <!-- Core Scripts - inklui ho kada pajina sira -->
         <script src = "{% static 'js/jquery.min.js' %}"></script>
         <script src = "{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/slick.js' %}"></script>
 
         {% block javascript %}
         {% endblock %}

@@ -2,33 +2,30 @@
 {% load static %}
 
 {% block content %}
+    <div class="col-xxl-4">
+        <img class="img-responsive" src="{% static 'img/cover.jpg' %}" alt="Logo" />
+    </div>
     <div class="container">
-        <div class="row">
-			<div class="col-xxl-4">
-				<img class="img-responsive" src="{% static 'img/cover.jpg' %}" alt="Logo" />
-			</div>
-		</div>
         <div class="row innovation">
             <h1 class="text_innovation"><b>Marobo mak fatin ida nebe konesidu ho bemanas. Marobo iha fatin turismu hanesan bemanas bedois no tradisaun hanesan tais-metan uma tradisional</b></h1>
         </div>
 
 
-    <!-- Grid row -->
-    <div class="row">
-    <!-- the cols in this div change the number of cards per row depending on screen size and the mb-4 adds space below cards if they spill over into the next row-->
-    {% for post in posts %}
-        <div class="col-12 col-md-6 col-md-4 mb-3">
-            <div class="w3-card">
-                <img class="card-img-top" src="{{ post.image.url }}" alt="Card image cap">
-                <div class="card-body-list">
-                    <h4 class="card-title white-text">{{ post.title }}</h4>
-                    <p class="card-text">{{ post.descriptions|safe|truncatewords_html:30 }}</p>
-                    <a href="{% url 'detail' post.id %}" class="btn btn-primary btn-md">Hare detallu</a>
+        <!-- Grid row -->
+        <div class="row">
+        <!-- the cols in this div change the number of cards per row depending on screen size and the mb-4 adds space below cards if they spill over into the next row-->
+        {% for post in posts %}
+            <div class="col-12 col-md-6 col-md-4 mb-3">
+                <div class="w3-card">
+                    <img class="card-img-top" src="{{ post.image.url }}" alt="Card image cap">
+                    <div class="card-body-list">
+                        <h4 class="card-title white-text">{{ post.title }}</h4>
+                        <p class="card-text">{{ post.descriptions|safe|truncatewords_html:25 }}</p>
+                        <a href="{% url 'detail' post.id %}" class="btn btn-primary btn-md">Hare detallu</a>
+                    </div>
                 </div>
             </div>
+        {% endfor %}
         </div>
-    {% endfor %}
     </div>
-    </div>
-
 {% endblock %}
