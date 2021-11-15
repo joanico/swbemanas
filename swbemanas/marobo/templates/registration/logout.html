@@ -1,0 +1,14 @@
+{% extends "registration/base.html" %}
+{% load i18n %}
+
+{% block content %}
+<nav class="mb-3">
+    {% if user.is_authenticated %}
+        <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <button class="btn btn-primary btn-sm" type="submit">Log Out</button>
+        </form>
+    {% endif %}
+</nav>
+{% endblock %}
+

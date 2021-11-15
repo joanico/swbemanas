@@ -1,0 +1,20 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ 
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/registration.css' %}">
+ 
+    <title>Django Blog</title>
+</head>
+<body class="container mt-5">
+    {% block content %}
+        <nav class="mb-3">
+          <a class="navbar-brand" href="/"><span class="logo">Mapa </span><span class="text-logo">Eskola</span></a>
+        </nav>
+    {% endblock content %}
+</body>
+</html>
