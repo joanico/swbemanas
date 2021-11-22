@@ -5,6 +5,8 @@ from django.views.generic.edit import CreateView
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout
 from .models import Post, PostImage
+from django.urls import reverse
+from django.conf import settings
 
 
 def home(request):
@@ -35,7 +37,5 @@ def login_view(request):
 
 
 def logout_view(request):
-    if request.method == 'POST':
-        logout(request)
-        messages.info(request, "You have successfully logged out.")
-    return redirect('logout')
+    logout(request)
+    return redirect(settings.LOGOUT_REDIRECT_URL)
