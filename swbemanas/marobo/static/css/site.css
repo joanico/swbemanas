@@ -268,18 +268,14 @@ img.img-detail {
   height: 1px;
   background: #eee;
 }
+
 .h-custom {
   height: calc(100% - 73px);
 }
+
 @media (max-width: 450px) {
   .h-custom {
     height: 100%;
   }
 }
 
-.row.login-page {
-    margin: 40px;
-    background-color: aliceblue;
-    margin-top: 30px;
-    margin-bottom: 80px;
-}

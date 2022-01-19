@@ -8,9 +8,10 @@
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/registration.css' %}">
  
-    <title>Django Blog</title>
+    <title>Marobo</title>
 </head>
 <body class="container mt-5">
+      <a href="{% url 'blog' %}" class="logo"><h3>Fila</h3></a>
     {% block registration_content %}
     {% endblock %}
 </body>

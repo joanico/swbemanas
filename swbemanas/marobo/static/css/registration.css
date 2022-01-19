@@ -16,15 +16,6 @@ a:hover {
     text-decoration: none;
 }
 
-.container.registration_content {
-    max-width: 50%;
-    position: relative;
-    text-align: left;
-    background-color: #fff;
-    border-radius: 6px;
-    box-shadow: 1px 1px 6px #DEDEDE;
-    padding: 30px;
-}
 
 .registration_content input:not([type="submit"]) {
     border-radius: 2px;
@@ -64,18 +55,6 @@ label {
     margin: 0px;
 }
 
-.logout-content {
-    text-align: center;
-}
-
-.button-login-again {
-    width: 100%;
-}
-
-.registration-messages {
-    margin-top: 18px;
-}
-
 .errorlist > li {
     display: inline;
 }
@@ -86,7 +65,25 @@ label {
     padding-left: 220px;
 }
 
+
+/* LOGIN PAGE */
+
+p.back_button {
+    margin: 45px;
+}
+
+.col-md-8.login-page {
+    background-color: lightgray;
+    margin-top: 45px;
+    border-radius: 10px;
+    margin-left: 125px;
+}
+
+.login-header {
+    text-align: center;
+}
+
 .card.login {
-    margin-top: 60px;
+    margin: 10px;
 }
 

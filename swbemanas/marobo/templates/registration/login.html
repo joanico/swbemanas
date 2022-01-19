@@ -5,9 +5,8 @@
 {% block registration_content %}
 <main class="login-form">
     <div class="cotainer registration_content">
-    <a class="navbar-brand" href="/"><span class="logo">Back</span></a>
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-8 login-page">
                 <div class="card login">
                     <div class="card-body">
                         <form action="{% url 'login' %}" method="post">{% csrf_token %}
