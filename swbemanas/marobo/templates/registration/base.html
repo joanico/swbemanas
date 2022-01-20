@@ -10,9 +10,22 @@
  
     <title>Marobo</title>
 </head>
-<body class="container mt-5">
-      <a href="{% url 'blog' %}" class="logo"><h3>Fila</h3></a>
-    {% block registration_content %}
-    {% endblock %}
+<body>
+    <div class="container">
+          <div class="row">
+              <div class="col-md-12 login-header">
+                  <a href="{% url 'blog' %}" class="logo"><h2>Marobo</h2></a>
+              </div>
+          </div>
+      </div>
+
+      <div class="container registration_content">
+          <div class="row">
+              <div class="col-md-12">
+                  {% block registration_content %}
+                  {% endblock %}
+              </div>
+          </div>
+      </div>
 </body>
 </html>
