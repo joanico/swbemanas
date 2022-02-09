@@ -1,15 +1,45 @@
 {% load static %}
 {% load i18n %}
 
-<!-- Page Wrapper -->
-<nav class="navbar navbar-default">
-    <div class="container">
-        <div class="col-xs-4">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="/">
-                    <span class="logo">Marobo</span>
-                </a>
-            </div>
+<nav class="navbar navbar-default navbar-inverse" role="navigation">
+   <div class="container" id="navfluid">
+       <div class="navbar-header">
+           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigationbar">
+               <span class="sr-only">Toggle navigation</span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/"><span class="logo1">Marobo</span></a>
         </div>
+        <div class="collapse navbar-collapse" id="navigationbar">
+            <ul class="nav navbar-nav navbar-right">
+            {% if user.is_authenticated %}
+                <b>{% trans 'Welcome' %} {{ user.first_name|default:user.username }}</b>
+                <img src="{% static 'icons/user.svg' %}" class="rounded-circle" alt="{{  user.username }}" width="25" height="25"> 
+                <span class="vertical-line"></span>
+            {% endif  %}
+                <a href="{% url 'blog' %}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Settings<span class="caret"></span></a>
+               <ul class="dropdown-menu">
+                {% if user.is_staff %}
+                    <a href="{% url 'admin:index' %}">
+                        <li class="icon-image"><img src="{% static 'icons/gear.svg' %}" class="icons" alt="icon" width="25" height="25" title="Admin">{% trans 'Admin' %}</li>
+                    </a>
+                {% endif %}
+                 <li role="separator" class="divider"></li>
+                {% if user.is_authenticated %}
+                    <a href="{% url 'logout' %}">
+                        <li class="icon-image"><img src="{% static 'icons/box-arrow-left.svg' %}" class="icons" alt="icon" width="25" height="25" title="Logout">{% trans 'log out' %}</li>
+                    </a>
+                {% else %}
+                    <a href="{% url 'login' %}?next={{ request.path }}">
+                        <li class="icon-image"><img src="{% static 'icons/power.svg' %}" class="icons" alt="icon" width="25" height="25" title="Login">{% trans 'Log In' %}</li>
+                    </a>
+                {% endif %}
+               </ul>
+            </ul>
+        </div><!--/.nav-collapse -->
     </div>
-</nav>
+</nav><!-- Page Wrapper -->
+
+
