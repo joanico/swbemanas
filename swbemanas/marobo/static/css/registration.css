@@ -1,3 +1,12 @@
+.container.registration_content {
+    position: relative;
+    text-align: left;
+    background-color: gainsboro;
+    border-radius: 6px;
+    box-shadow: 1px 1px 6px #DEDEDE;
+    padding: 30px;
+}
+
 p.errornote, ul.errorlist {
     font-size: 13px;
     color: #c0392b;
@@ -59,31 +68,9 @@ label {
     display: inline;
 }
 
-.mb-3, .my-3 {
-    margin-bottom: 1rem!important;
-    display: flex;
-    padding-left: 220px;
-}
-
-
 /* LOGIN PAGE */
-
-p.back_button {
-    margin: 45px;
-}
-
-.col-md-8.login-page {
-    background-color: lightgray;
-    margin-top: 45px;
-    border-radius: 10px;
-    margin-left: 125px;
-}
 
 .login-header {
     text-align: center;
+    padding: 5%;
 }
-
-.card.login {
-    margin: 10px;
-}
-

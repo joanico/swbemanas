@@ -3,45 +3,33 @@
 {% load static %}
  
 {% block registration_content %}
-<main class="login-form">
-    <div class="cotainer registration_content">
-        <div class="row justify-content-center">
-            <div class="col-md-8 login-page">
-                <div class="card login">
-                    <div class="card-body">
-                        <form action="{% url 'login' %}" method="post">{% csrf_token %}
-                            <h5 class="registration-title">Please Log In</h5>
-                            <div class="form-row">
-                                {{ form.username.label_tag }} 
-                                {{ form.username }}
-                            </div>
-                            <div class="form-row">
-                                {{ form.password.label_tag }}
-                                {{ form.password }}
-                            </div>
-
-                            {% if form.non_field_errors %}
-                            {% for error in form.non_field_errors %}
-                            <p class="errornote animated headShake">
-                                {{ error }}
-                            </p>
-                            {% endfor %}
-                            {% endif %}
-                            {% if user.is_authenticated %}
-                            <p class="errornote animated headShake">
-                                {% blocktrans with username=request.user.get_username trimmed %}You are authenticated as {{ username }}, but are not authorized to access this page. Would you like to login to a different account?
-                                {% endblocktrans %}
-                            </p>
-                            {% endif %}
-
-                            <div class="form-row">
-                                <button type="submit" class="btn btn-primary">Log in</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
+    <form action="{% url 'login' %}" method="post">{% csrf_token %}
+        <h5 class="registration-title">Please Log In</h5>
+        <div class="form-row">
+            {{ form.username.label_tag }} 
+            {{ form.username }}
         </div>
-    </div>
-</main>
+        <div class="form-row">
+            {{ form.password.label_tag }}
+            {{ form.password }}
+        </div>
+
+        {% if form.non_field_errors %}
+        {% for error in form.non_field_errors %}
+        <p class="errornote animated headShake">
+            {{ error }}
+        </p>
+        {% endfor %}
+        {% endif %}
+        {% if user.is_authenticated %}
+        <p class="errornote animated headShake">
+            {% blocktrans with username=request.user.get_username trimmed %}You are authenticated as {{ username }}, but are not authorized to access this page. Would you like to login to a different account?
+            {% endblocktrans %}
+        </p>
+        {% endif %}
+
+        <div class="form-row">
+            <button type="submit" class="btn btn-primary">Log in</button>
+        </div>
+    </form>
 {% endblock %}
