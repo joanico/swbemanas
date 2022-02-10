@@ -8,16 +8,16 @@
   <div class="container-fluid">
     <!-- Brand -->
     <div class="row">
-        <div class="col-md-12">
-            <h1 class="header-text">Your Profile</h1>
+        <div class="col">
+            <h3 class="header-text">Your Profile</h3>
             <div class="profile-text">
                 {% if user.is_authenticated %}
-                <img src="{% static 'icons/user.svg' %}" class="rounded-circle" alt="{{  user.username }}" width="95" height="95"><br/>
+                <img src="{% static 'icons/user.svg' %}" class="rounded-circle" alt="{{  user.username }}" width="75" height="75"><br/>
                     <b>{{ user.first_name|default:user.username }}</b>
                 {% endif %}
             </div>
         </div>
-        <div class="col-md-12">
+        <div class="col">
             <div class="general-settings">
                 {% if user.is_authenticated %}
                     {% if user.is_staff %}
