@@ -154,6 +154,11 @@ span.logo {
     font-family: Raleway, sans-serif;
 }
 
+/* index bottom */ 
+.col-12.col-md-6.col-md-4.mb-3 {
+    bottom: 10px;
+}
+
 /* FOOTER */
 .footer-copyright.text-center.py-3 {
     background-color: darkgrey;
@@ -171,10 +176,10 @@ span.icon-settings {
 
 .footer {
     background-color: #105469 !important;
-    position: fixed;
     height: 110px;
     bottom: 0;
     width: 100%;
+    padding: 10px;
 }
 
 .footer a {
@@ -306,5 +311,15 @@ h3.header-text {
 .profile-text {
     text-align: center;
     margin: 14px;
+}
+
+.row.align-items-center {
+    min-height: calc(100vh - 130px);
+    padding-bottom: 90px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #c2c5c7;
+    max-width: 600px;
+    margin: auto;
 }
 
