@@ -283,14 +283,22 @@ img.img-detail {
 
 h1.header-text {
     text-align: center;
-    margin: 70px;
+    margin: 40px;
 }
 
 .general-settings {
-    background-color: darkgray;
+    background-color: #ffff;
     padding: 16px;
+}
+
+.account-settings {
+    background-color: #ffff;
+    padding: 16px;
+    border-top-style: outset;
 }
 
 .profile-text {
     text-align: center;
+    margin: 14px;
 }
+
