@@ -279,3 +279,18 @@ img.img-detail {
   }
 }
 
+/* PROFILE PAGE */
+
+h1.header-text {
+    text-align: center;
+    margin: 70px;
+}
+
+.general-settings {
+    background-color: darkgray;
+    padding: 16px;
+}
+
+.profile-text {
+    text-align: center;
+}

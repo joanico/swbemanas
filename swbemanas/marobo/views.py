@@ -9,8 +9,8 @@ from django.urls import reverse
 from django.conf import settings
 
 
-def home(request):
-    return render(request, "marobo/home.html")
+def profile(request):
+    return render(request, "marobo/profile.html")
 
 def blog_view(request):
     posts = Post.objects.all()

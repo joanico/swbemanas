@@ -14,18 +14,15 @@
         </div>
         <div class="collapse navbar-collapse" id="navigationbar">
             <ul class="nav navbar-nav navbar-right">
-            {% if user.is_authenticated %}
-                <b>{% trans 'Welcome' %} {{ user.first_name|default:user.username }}</b>
-                <img src="{% static 'icons/user.svg' %}" class="rounded-circle" alt="{{  user.username }}" width="25" height="25"> 
-                <span class="vertical-line"></span>
-            {% endif  %}
-                <a href="{% url 'blog' %}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Settings<span class="caret"></span></a>
+                <a href="{% url 'profile' %}"><img src="{% static 'icons/gear.svg' %}" class="rounded-circle" alt="" width="25" height="25"</a>
                <ul class="dropdown-menu">
+            {% if user.is_authenticated %}
                 {% if user.is_staff %}
                     <a href="{% url 'admin:index' %}">
                         <li class="icon-image"><img src="{% static 'icons/gear.svg' %}" class="icons" alt="icon" width="25" height="25" title="Admin">{% trans 'Admin' %}</li>
                     </a>
                 {% endif %}
+            {% endif  %}
                  <li role="separator" class="divider"></li>
                 {% if user.is_authenticated %}
                     <a href="{% url 'logout' %}">
