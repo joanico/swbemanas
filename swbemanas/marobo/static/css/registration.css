@@ -1,10 +1,12 @@
 .container.registration_content {
-    position: relative;
-    text-align: left;
-    background-color: gainsboro;
+    background-color: #c2c5c7;
     border-radius: 6px;
     box-shadow: 1px 1px 6px #DEDEDE;
-    padding: 30px;
+    min-height: calc(100vh - 130px);
+    padding-left: 20px;
+    padding-right: 20px;
+    max-width: 650px;
+    margin: auto;
 }
 
 p.errornote, ul.errorlist {
@@ -72,5 +74,5 @@ label {
 
 .login-header {
     text-align: center;
-    padding: 5%;
+    padding: 25px;
 }

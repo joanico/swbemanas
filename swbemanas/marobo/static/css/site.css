@@ -42,6 +42,14 @@ a.navbar-brand {
     padding: 10px 5px 10px 10px;
 }
 
+.navbar-inverse .navbar-toggle {
+    border-color: cornflowerblue;
+}
+
+.navbar-inverse .navbar-toggle:hover {
+    background-color: cornflowerblue;
+}
+
 img.icons {
     margin: 5px;
     padding: 5px;
@@ -154,6 +162,11 @@ span.logo {
     font-family: Raleway, sans-serif;
 }
 
+/* index bottom */ 
+.col-12.col-md-6.col-md-4.mb-3 {
+    bottom: 10px;
+}
+
 /* FOOTER */
 .footer-copyright.text-center.py-3 {
     background-color: darkgrey;
@@ -165,10 +178,16 @@ p.footer-text {
     color: white;
 }
 
+span.icon-settings {
+    margin: 5px;
+}
+
 .footer {
     background-color: #105469 !important;
-    padding: 10px 0;
-    margin-top: 10px;
+    height: 110px;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
 }
 
 .footer a {
@@ -279,3 +298,38 @@ img.img-detail {
   }
 }
 
+/* PROFILE PAGE */
+
+h3.header-text {
+    text-align: center;
+    margin: 30px;
+}
+
+.general-settings {
+    background-color: #ffff;
+    padding: 16px;
+}
+
+.account-settings {
+    background-color: #ffff;
+    padding: 16px;
+    border-top-style: outset;
+}
+
+.profile-text {
+    text-align: center;
+    margin: 14px;
+}
+
+.row.align-items-center {
+    min-height: calc(100vh - 130px);
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #c2c5c7;
+    max-width: 650px;
+    margin: auto;
+}
+
+.line-boder {
+    border-top: 1px solid #d8d9dd;
+}
