@@ -1,6 +1,7 @@
 #log/forms.py
 from django.contrib.auth.forms import AuthenticationForm 
 from django import forms
+from .models import Comment
 
 # If you don't do this you cannot use Bootstrap CSS
 class LoginForm(AuthenticationForm):
@@ -9,3 +10,8 @@ class LoginForm(AuthenticationForm):
     password = forms.CharField(label="Password", max_length=30, 
                                widget=forms.TextInput(attrs={'class': 'form-control', 'name': 'password'}))
 
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ('name', 'email', 'body')

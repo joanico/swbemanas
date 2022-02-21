@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Image, Post, PostImage 
+from .models import Post, PostImage 
 
 class PostImageAdmin(admin.StackedInline):
     model = PostImage
@@ -14,5 +14,3 @@ class PostAdmin(admin.ModelAdmin):
 @admin.register(PostImage)
 class PostImageAdmin(admin.ModelAdmin):
     pass
-
-admin.site.register(Image)
