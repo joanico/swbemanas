@@ -355,3 +355,14 @@ h3.header-text {
 button.add-button {
     margin-bottom: 10px;
 }
+
+li.info {
+    font-style: italic;
+    padding-left: 15px;
+}
+
+p.info {
+    padding-left: 15px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}

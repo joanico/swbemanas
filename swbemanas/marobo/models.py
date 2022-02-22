@@ -24,9 +24,8 @@ class PostImage(models.Model):
 class Comment(models.Model):
     post = models.ForeignKey(Post, related_name='comments', on_delete=models.CASCADE)
     name = models.CharField(max_length=80)
-    email = models.EmailField(max_length=200, blank=True)
     content = models.TextField()
-    created_on = models.DateTimeField(auto_now_add=True)
+    created_on = models.DateTimeField(auto_now=True)
     updated_on = models.DateTimeField(auto_now=True)
     # manually deactivate inappropriate comments from admin site
     active = models.BooleanField(default=True)

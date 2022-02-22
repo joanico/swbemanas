@@ -17,4 +17,4 @@ class PostImageAdmin(admin.ModelAdmin):
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ['name', 'email', 'content', 'created_on']
+    list_display = ['name', 'content', 'active', 'created_on']
