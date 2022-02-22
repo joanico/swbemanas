@@ -342,7 +342,7 @@ h3.header-text {
     border: 1px solid rgb(221, 221, 221);
 }
 
-#cont {
+.replay-comment {
     background-color: #fff;
     margin-bottom: 5px;
 }
@@ -356,8 +356,9 @@ button.add-button {
     margin-bottom: 10px;
 }
 
-li.info {
+p.content-replay {
     font-style: italic;
+    text-align: justify;
     padding-left: 15px;
 }
 
@@ -365,4 +366,5 @@ p.info {
     padding-left: 15px;
     margin-top: 10px;
     margin-bottom: 0px;
+    font-family: 'FontAwesome';
 }

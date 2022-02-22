@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 <!--Carousel Wrapper-->
@@ -42,8 +43,9 @@
                   </div>
               </div>
             {% endfor %}
+
+            <!-- Comments Form -->
             <div class="col-md-4 display-all-comments">
-                <!-- Comments Form -->
                 <button type="button" onclick="document.getElementById('show').style.display='block'"value="ShowMe" class="btn btn-info">Add new comment</button>
                 <!-- Comments Form -->
                 <form action="." id="show" style="display:none" method="post">
@@ -56,18 +58,20 @@
                 <div class="comment">
                     {% for comment in comments %}
                         <div class="commented">
-                            <p class="info-author">{{ comment.name }} | {{ comment.created_on }}</p>
-                                {{ comment.content|linebreaks }}
+                            <p class="info-author">{{ comment.name }} | {{ comment.created_on|date:'d-m-Y H:i' }}</p>
+                            <p class="info-comment">
+                                <img src="{% static 'icons/comment.svg' %}" class="icons-comment" alt="icon" width="20" height="20" title="comments"> {{ comment.content }}
+                            </p>
 
                             {% for replay in comment.replies.all %}
-                                <p class="info">{{ replay.name }} | {{ replay.created_on }}</p>
-                                <li class="info">{{ replay.content }}</li>
+                                <p class="info">{{ replay.name }} | {{ replay.created_on|date:'d-m-Y H:i' }}</p>
+                                <p class="content-replay"><img src="{% static 'icons/replay.svg' %}" class="icons" alt="icon" width="35" height="35" title="replay"> {{ replay.content }}</p>
                             {% endfor %}
                             <p>
                             <button class="btn btn-cta-secondary" data-id="{{ comment.id }} ">Replay</button>
                             </p>
                        </div>
-                       <form action="." method="post" style="padding:10px; display:none;" id="til_{{ comment.id }}">
+                       <form action="." method="post" class="replay-comment" style="padding:10px; display:none;" id="form_{{ comment.id }}">
                                 {{ comment_form.as_p }}
                                 {% csrf_token %}
                                 <!-- Hidden input for parent comment.id -->
@@ -79,13 +83,13 @@
                     {% endfor %}
                 </div>
         </div>
-        <!-- in html -->
+        <!-- end of comment form-->
 </div>
 <script type="text/javascript">
 
     $('.btn-cta-secondary').click(function (e) {
         var id = $(e.currentTarget).data('id')
-        $('#til_' + id).toggle()
+        $('#form_' + id).toggle()
     })
 
 </script>
