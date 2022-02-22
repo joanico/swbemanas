@@ -56,12 +56,12 @@
                 <div class="comment">
                     {% for comment in comments %}
                         <div class="commented">
-                            <p class="info">{{ comment.name }} | {{ comment.created }}</p>
+                            <p class="info">{{ comment.name }} | {{ comment.created_on }}</p>
                                 {{ comment.body|linebreaks }}
 
                             {% for replay in comment.replies.all %}
-                                <p class="info">{{ replay.name }} | {{ replay.created }}</p>
-                                <li>{{ replay.body }}</li>
+                                <p class="info">{{ replay.name }} | {{ replay.created_on }}</p>
+                                <li>{{ replay.content }}</li>
                             {% endfor %}
                             <p>
                                 <input type="button" value="Replay" id="bt" onclick="toggle(this)">
