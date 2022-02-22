@@ -5,7 +5,7 @@
 <div class="container detail">
     <a href="{% url 'blog' %}" class="btn btn-default">Fila</a>
     <div class="row">
-        <div class="col-md-6 display-all-posts">
+        <div class="col-md-8 display-all-posts">
             <p class="description-text">{{ post.descriptions|safe|truncatewords_html:5000000 }}</p>
             {% for p in photos %}
                 <div class="card my-4">
@@ -44,39 +44,57 @@
             {% endfor %}
             <div class="col-md-4 display-all-comments">
                 <!-- Comments Form -->
-                <h2>Add a new comment</h2>
+                <button type="button" onclick="document.getElementById('show').style.display='block'"value="ShowMe" class="btn btn-info">Add new comment</button>
                 <!-- Comments Form -->
-                <form action="." method="post">
+                <form action="." id="show" style="display:none" method="post">
                     {{ comment_form.as_p }}
                     {% csrf_token %}
-                    <button type="submit">Add comment</button>
+                    <button class="add-button" type="submit">Add comment</button>
                 </form>
 
                 <!-- Comment with nested comments -->
-                {% for comment in comments %}
-                    <div class="comment" style="background-color: powderblue">
-                        <p class="info">{{ comment.name }} | {{ comment.created }}</p>
-                            {{ comment.body|linebreaks }}
+                <div class="comment">
+                    {% for comment in comments %}
+                        <div class="commented">
+                            <p class="info">{{ comment.name }} | {{ comment.created }}</p>
+                                {{ comment.body|linebreaks }}
 
-                        {% for replay in comment.replies.all %}
-                            <p class="info">{{ replay.name }} | {{ replay.created }}</p>
-                            <li>{{ replay.body }}</li>
-                        {% endfor %}
-
-                        <button type="button" onclick="document.getElementById('show').style.display='block'"value="ShowMe" class="btn btn-default">Replay</button>
-                            <form action="." id="show" style="display:none" method="post">
-                                {{ comment_form.as_p }}
-                                {% csrf_token %}
-                                <!-- Hidden input for parent comment.id -->
-                                <input type="hidden" name="parent_id" value="{{ comment.id }}">
-                                <input class="btn btn-primary" type="submit" value="Replay">
-                            </form>
-                    </div>
-                {% empty %}
-                <h4>There are no comments yet.</h4>
-                {% endfor %}
-            </div>
+                            {% for replay in comment.replies.all %}
+                                <p class="info">{{ replay.name }} | {{ replay.created }}</p>
+                                <li>{{ replay.body }}</li>
+                            {% endfor %}
+                            <p>
+                                <input type="button" value="Replay" id="bt" onclick="toggle(this)">
+                            </p>
+                       </div>
+                            <div style="padding:10px; display:none;" id="cont">
+                                <form action="." method="post">
+                                    {{ comment_form.as_p }}
+                                    {% csrf_token %}
+                                    <!-- Hidden input for parent comment.id -->
+                                    <input type="hidden" name="parent_id" value="{{ comment.id }}">
+                                    <input class="btn btn-primary" type="submit" value="Replay">
+                                </form>
+                            </div>
+                    {% empty %}
+                    <h4>There are no comments yet.</h4>
+                    {% endfor %}
+                </div>
         </div>
 </div>
+<script>
+    function toggle(ele) {
+        var cont = document.getElementById('cont');
+        if (cont.style.display == 'block') {
+            cont.style.display = 'none';
+
+            document.getElementById(ele.id).value = 'Replay';
+        }
+        else {
+            cont.style.display = 'block';
+            document.getElementById(ele.id).value = 'Unreplay';
+        }
+    }
+</script>
 {% endblock %}
 

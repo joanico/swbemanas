@@ -333,3 +333,25 @@ h3.header-text {
 .line-boder {
     border-top: 1px solid #d8d9dd;
 }
+
+/* Comment style */
+
+.commented {
+    background-color: #fff;
+    padding: 14px;
+    border: 1px solid rgb(221, 221, 221);
+}
+
+#cont {
+    background-color: #fff;
+    margin-bottom: 5px;
+}
+
+.btn-info {
+    margin-bottom: 10px;
+    margin-top: 26px;
+}
+
+button.add-button {
+    margin-bottom: 10px;
+}
