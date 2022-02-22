@@ -4,26 +4,25 @@
 <!--Carousel Wrapper-->
 <div class="container detail">
     <a href="{% url 'blog' %}" class="btn btn-default">Fila</a>
-    <div class="detail-page">
-        <p class="description-text">{{ post.descriptions|safe|truncatewords_html:5000000 }}</p>
-        <div class="image-detail">
+    <div class="row">
+        <div class="col-md-6 display-all-posts">
+            <p class="description-text">{{ post.descriptions|safe|truncatewords_html:5000000 }}</p>
             {% for p in photos %}
-            <div class="col-md-6 col-lg-4">
                 <div class="card my-4">
                     <div class="card-thumbnail">
-                    {% if p.images %}
-                    <a href="javascript:void(0);" class="" data-toggle="modal" data-target="#tutorialsplaneModal_{{ p.id }}">
-                            <img src="{{p.images.url }}" class="img-detail" alt="Image">
-                            <p class="label-image">{{ p.name }}</h4>
-                        </a>
-                    {% else %}
-                        <video width="530" height="440" controls autoplay>
-                            <source src="{{ p.images.url }}" type="video/mp4"> </source>
-                        </video>
-                        <h3>Iha ne'e la iha photo</h3>
-                    {% endif %}
-                </div>
-              </div>
+                        {% if p.images %}
+                        <a href="javascript:void(0);" class="" data-toggle="modal" data-target="#tutorialsplaneModal_{{ p.id }}">
+                                <img src="{{p.images.url }}" class="img-detail" alt="Image">
+                                <p class="label-image">{{ p.name }}</h4>
+                            </a>
+                        {% else %}
+                            <video width="530" height="440" controls autoplay>
+                                <source src="{{ p.images.url }}" type="video/mp4"> </source>
+                            </video>
+                            <h3>Iha ne'e la iha photo</h3>
+                        {% endif %}
+                    </div>
+                  </div>
             </div>
             <!-- display modal -->
             <div id="tutorialsplaneModal_{{ p.id }}" class="modal fade" role='dialog'>
@@ -43,39 +42,41 @@
                   </div>
               </div>
             {% endfor %}
+            <div class="col-md-4 display-all-comments">
+                <!-- Comments Form -->
+                <h2>Add a new comment</h2>
+                <!-- Comments Form -->
+                <form action="." method="post">
+                    {{ comment_form.as_p }}
+                    {% csrf_token %}
+                    <button type="submit">Add comment</button>
+                </form>
+
+                <!-- Comment with nested comments -->
+                {% for comment in comments %}
+                    <div class="comment" style="background-color: powderblue">
+                        <p class="info">{{ comment.name }} | {{ comment.created }}</p>
+                            {{ comment.body|linebreaks }}
+
+                        {% for replay in comment.replies.all %}
+                            <p class="info">{{ replay.name }} | {{ replay.created }}</p>
+                            <li>{{ replay.body }}</li>
+                        {% endfor %}
+
+                        <button type="button" onclick="document.getElementById('show').style.display='block'"value="ShowMe" class="btn btn-default">Replay</button>
+                            <form action="." id="show" style="display:none" method="post">
+                                {{ comment_form.as_p }}
+                                {% csrf_token %}
+                                <!-- Hidden input for parent comment.id -->
+                                <input type="hidden" name="parent_id" value="{{ comment.id }}">
+                                <input class="btn btn-primary" type="submit" value="Replay">
+                            </form>
+                    </div>
+                {% empty %}
+                <h4>There are no comments yet.</h4>
+                {% endfor %}
+            </div>
         </div>
-    </div>
-    <!-- Comments Form -->
-    <h2>Add a new comment</h2>
-    <form action="." method="post">
-        {{ comment_form.as_p }}
-        {% csrf_token %}
-        <button type="submit">Add comment</button>
-    </form>
-
-    <!-- Comment with nested comments -->
-    {% for comment in comments %}
-        <div class="comment" style="background-color: powderblue">
-            <p class="info">{{ comment.name }} | {{ comment.created }}</p>
-                {{ comment.body|linebreaks }}
-
-            {% for replay in comment.replies.all %}
-                <p class="info">{{ replay.name }} | {{ replay.created }}</p>
-                <li>{{ replay.body }}</li>
-            {% endfor %}
-
-            <h5>Replay</h5>
-            <form action="." method="post">
-                {{ comment_form.as_p }}
-                {% csrf_token %}
-                <!-- Hidden input for parent comment.id -->
-                <input type="hidden" name="parent_id" value="{{ comment.id }}">
-                <input class="btn btn-primary" type="submit" value="Replay">
-            </form>
-        </div>
-    {% empty %}
-    <h4>There are no comments yet.</h4>
-    {% endfor %}
 </div>
 {% endblock %}
 
