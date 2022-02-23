@@ -4,7 +4,7 @@
 {% block content %}
 <!--Carousel Wrapper-->
 <div class="container detail">
-    <a href="{% url 'blog' %}" class="btn btn-default">Fila</a>
+    <a href="{% url 'blog' %}"><img src={% static 'icons/back1.png' %} class="icon-back" alt="icon" width="40" height="40"></a>
     <div class="row">
         <div class="col-md-8 display-all-posts">
             <p class="description-text">{{ post.descriptions|safe|truncatewords_html:5000000 }}</p>
