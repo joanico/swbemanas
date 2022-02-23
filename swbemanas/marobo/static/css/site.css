@@ -221,6 +221,8 @@ i.fa:hover {
 
 .container.detail {
     background-color: #e3e4e4;
+    width: 100%;
+    height: auto;
 }
 
 p.label-image {
@@ -370,4 +372,15 @@ p.info {
 img.icons-replay {
     margin-left: 8px;
     padding: 5px;
+}
+
+.display-all-comments {
+    width: 25%;
+    height: auto;
+}
+
+#show {
+    background-color: #fff;
+    padding-left: 6px;
+    padding-top: 10px;
 }
