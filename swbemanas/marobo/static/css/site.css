@@ -270,9 +270,13 @@ p.description-text {
     border-color: #1380ee;
 }
 
-img.img-detail {
-    width: 100%;
-    height: auto;
+.img-detail {
+    width: 250px;
+    height: 210px;
+    float: left;
+    object-position: center;
+    object-fit: cover;
+    margin: 10px;
 }
 
 .divider:after,
@@ -317,10 +321,10 @@ h3.header-text {
 }
 
 .row.align-items-center {
-    min-height: calc(100vh - 130px);
+    min-height: calc(100vh - 115px);
     padding-left: 20px;
     padding-right: 20px;
-    background-color: #c2c5c7;
+    background-color: #8aafc7;
     max-width: 650px;
     margin: auto;
 }
@@ -352,7 +356,7 @@ button.add-button {
 
 p.content-replay {
     font-style: italic;
-    text-align: justify;
+    font-size: 12px;
     padding-left: 15px;
 }
 
@@ -361,4 +365,9 @@ p.info {
     margin-top: 10px;
     margin-bottom: 0px;
     font-family: 'FontAwesome';
+}
+
+img.icons-replay {
+    margin-left: 8px;
+    padding: 5px;
 }

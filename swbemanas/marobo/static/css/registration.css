@@ -1,8 +1,8 @@
 .container.registration_content {
-    background-color: #c2c5c7;
+    background-color: #8aafc7;
     border-radius: 6px;
     box-shadow: 1px 1px 6px #DEDEDE;
-    min-height: calc(100vh - 130px);
+    min-height: calc(100vh - 115px);
     padding-left: 20px;
     padding-right: 20px;
     max-width: 650px;

@@ -3,28 +3,22 @@
 
 {% block content %}
 <!--Carousel Wrapper-->
-<div class="container detail">
+<div class="container">
     <a href="{% url 'blog' %}"><img src={% static 'icons/back1.png' %} class="icon-back" alt="icon" width="40" height="40"></a>
     <div class="row">
-        <div class="col-md-8 display-all-posts">
+        <div class="col-md-9 display-all-posts">
             <p class="description-text">{{ post.descriptions|safe|truncatewords_html:5000000 }}</p>
             {% for p in photos %}
-                <div class="card my-4">
-                    <div class="card-thumbnail">
-                        {% if p.images %}
-                        <a href="javascript:void(0);" class="" data-toggle="modal" data-target="#tutorialsplaneModal_{{ p.id }}">
-                                <img src="{{p.images.url }}" class="img-detail" alt="Image">
-                                <p class="label-image">{{ p.name }}</h4>
-                            </a>
-                        {% else %}
-                            <video width="530" height="440" controls autoplay>
-                                <source src="{{ p.images.url }}" type="video/mp4"> </source>
-                            </video>
-                            <h3>Iha ne'e la iha photo</h3>
-                        {% endif %}
-                    </div>
-                  </div>
-            </div>
+                {% if p.images %}
+                    <a href="javascript:void(0);" class="" data-toggle="modal" data-target="#tutorialsplaneModal_{{ p.id }}">
+                        <img src="{{p.images.url }}" class="img-detail" alt="Image">
+                    </a>
+                {% else %}
+                    <video width="530" height="440" controls autoplay>
+                        <source src="{{ p.images.url }}" type="video/mp4"> </source>
+                    </video>
+                    <h3>Iha ne'e la iha photo</h3>
+                {% endif %}
             <!-- display modal -->
             <div id="tutorialsplaneModal_{{ p.id }}" class="modal fade" role='dialog'>
                 <div class="modal-dialog modal-lg">
@@ -43,9 +37,9 @@
                   </div>
               </div>
             {% endfor %}
-
+            </div>
             <!-- Comments Form -->
-            <div class="col-md-4 display-all-comments">
+            <div class="col-md-3 display-all-comments">
                 <button type="button" onclick="document.getElementById('show').style.display='block'"value="ShowMe" class="btn btn-info">Add new comment</button>
                 <!-- Comments Form -->
                 <form action="." id="show" style="display:none" method="post">
@@ -65,7 +59,7 @@
 
                             {% for replay in comment.replies.all %}
                                 <p class="info">{{ replay.name }} | {{ replay.created_on|date:'d-m-Y H:i' }}</p>
-                                <p class="content-replay"><img src="{% static 'icons/replay.svg' %}" class="icons" alt="icon" width="35" height="35" title="replay"> {{ replay.content }}</p>
+                                <p class="content-replay"><img src="{% static 'icons/replay.svg' %}" class="icons-replay" alt="icon" width="35" height="35" title="replay"> {{ replay.content }}</p>
                             {% endfor %}
                             <p>
                             <button class="btn btn-cta-secondary" data-id="{{ comment.id }} ">Replay</button>
@@ -82,8 +76,9 @@
                     <h4>There are no comments yet.</h4>
                     {% endfor %}
                 </div>
-        </div>
+            </div>
         <!-- end of comment form-->
+        </div>
 </div>
 <script type="text/javascript">
 
