@@ -5,26 +5,18 @@ from django.views.generic.edit import CreateView
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout
 from .models import Post, PostImage, Comment
-from django.urls import reverse
+from django.http import HttpResponseRedirect
 from django.conf import settings
 from .forms import CommentForm
 
-
+# Profile view but did not use yet
 def profile(request):
     return render(request, "marobo/profile.html")
 
 def blog_view(request):
+    # Get all data from Post database
     posts = Post.objects.all()
     return render(request, 'marobo/index.html', {'posts':posts})
-
-#def detail_view(request, id):
-#    post = get_object_or_404(Post, id=id)
-#    photos = PostImage.objects.filter(post=post)
-#    return render(request, 'marobo/detail.html', {
-#        'post':post,
-#        'photos':photos
-#    })
-
 
 def detail_view(request, id):
     # get post object
@@ -53,21 +45,21 @@ def detail_view(request, id):
                     replay_comment = comment_form.save(commit=False)
                     # assign parent_obj to replay comment
                     replay_comment.parent = parent_obj
-            # normal comment
             # create comment object but do not save to database
             new_comment = comment_form.save(commit=False)
             # assign ship to the comment
             new_comment.post = post
             # save
             new_comment.save()
-            return redirect('/')
+            # return direct to absolute url
+            return HttpResponseRedirect(post.get_absolute_url())
     else:
         comment_form = CommentForm()
     return render(request, 'marobo/detail.html', {'post': post, 'photos':photos, 'comments': comments, 'comment_form': comment_form})
 
 
-
 def login_view(request):
+    # request post method
     if request.method == 'POST':
         form = AuthenticationForm(data=request.POST)
         if form.is_valid():
