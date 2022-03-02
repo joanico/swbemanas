@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, PostImage, Comment
+from .models import Post, PostImage, Comment, CommentPhoto
 
 class PostImageAdmin(admin.StackedInline):
     model = PostImage
@@ -18,3 +18,7 @@ class PostImageAdmin(admin.ModelAdmin):
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
     list_display = ['name', 'content', 'active', 'created_on']
+
+@admin.register(CommentPhoto)
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ['image', 'comment_post', 'author', 'date_posted']

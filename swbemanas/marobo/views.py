@@ -58,6 +58,23 @@ def detail_view(request, id):
     return render(request, 'marobo/detail.html', {'post': post, 'photos':photos, 'comments': comments, 'comment_form': comment_form})
 
 
+def comment_detailview(request, id):
+    if request.method == 'POST':
+            cf = CommentPhotoForm(request.POST or None)
+            if cf.is_valid():
+                content = request.POST.get('content')
+                comment = CommentPhoto.objects.create(post = post, user = request.user, content = content)
+                comment.save()
+                return redirect(post.get_absolute_url())
+            else:
+                cf = CommentPhotoForm()
+
+                context ={
+                'comment_form':cf,
+                }
+                return render(request, 'marobo/detail.html', context)
+
+
 def login_view(request):
     # request post method
     if request.method == 'POST':

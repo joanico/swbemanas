@@ -1,7 +1,7 @@
 #log/forms.py
 from django.contrib.auth.forms import AuthenticationForm 
 from django import forms
-from .models import Comment
+from .models import Comment, CommentPhoto
 
 # If you don't do this you cannot use Bootstrap CSS
 class LoginForm(AuthenticationForm):
@@ -22,3 +22,16 @@ class CommentForm(forms.ModelForm):
                 'maxlength': '200',
             }),
         }
+
+class CommentPhotoForm(forms.ModelForm):
+	content = forms.CharField(label ="", widget = forms.Textarea(
+	attrs ={
+		'class':'form-control',
+		'placeholder':'Comment here !',
+		'rows':4,
+		'cols':50
+	}))
+	class Meta:
+		model = CommentPhoto
+		fields =['content']
+

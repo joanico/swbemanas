@@ -1,6 +1,8 @@
 from django.db import models
 from tinymce.models import HTMLField
 from django.urls import reverse
+from django.utils import timezone
+from django.contrib.auth.models import User
 
 
 class Post(models.Model):
@@ -28,8 +30,8 @@ class Comment(models.Model):
     post = models.ForeignKey(Post, related_name='comments', on_delete=models.CASCADE)
     name = models.CharField(max_length=80)
     content = models.TextField()
-    created_on = models.DateTimeField(auto_now_add=True)
-    updated_on = models.DateTimeField(auto_now_add=True)
+    created_on = models.DateTimeField(default = timezone.now)
+    updated_on = models.DateTimeField(default = timezone.now)
     # manually deactivate inappropriate comments from admin site
     active = models.BooleanField(default=True)
     parent = models.ForeignKey('self', null=True, blank=True, related_name='replies', on_delete=models.CASCADE)
@@ -40,3 +42,13 @@ class Comment(models.Model):
 
     def __str__(self):
         return 'Comment by {}'.format(self.name)
+
+
+class CommentPhoto(models.Model):
+	image = models.ForeignKey(PostImage, on_delete = models.CASCADE)
+	comment_post = models.TextField()
+	date_posted = models.DateTimeField(default = timezone.now)
+	author = models.ForeignKey(User, on_delete = models.CASCADE)
+
+	def __str__(self):
+		return f'{self.author.username}\'s CommentPhoto- {self.author}'

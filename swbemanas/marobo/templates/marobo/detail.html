@@ -10,8 +10,13 @@
             <p class="description-text">{{ post.descriptions|safe|truncatewords_html:5000000 }}</p>
             {% for p in photos %}
                 {% if p.images %}
+                <div class="card" style="width: 18rem;">
+                    <img src="{{p.images.url }}" class="img-detail" alt="Card image cap">                  <div class="card-body">
+                        <a href="{% url 'blog' %}"><img src="{% static 'icons/message-circle.svg' %}" class="icons"></a>
+                  </div>
+                </div>
                     <a href="javascript:void(0);" class="" data-toggle="modal" data-target="#tutorialsplaneModal_{{ p.id }}">
-                        <img src="{{p.images.url }}" class="img-detail" alt="Image">
+                        <img src="{{p.images.url }}" class="img-detail" alt="Image"><img src="{% static 'icons/message-circle.svg' %}" class="icons">
                     </a>
                 {% else %}
                     <video width="530" height="440" controls autoplay>
