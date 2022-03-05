@@ -4,7 +4,6 @@ from django.urls import reverse
 from django.contrib.auth.models import User
 from django.utils import timezone
 
-
 class Post(models.Model):
     title = models.CharField(max_length=128)
     descriptions = HTMLField(blank=True, null=True)
@@ -28,10 +27,10 @@ class PostImage(models.Model):
 
 class Comment(models.Model):
     post = models.ForeignKey(Post, related_name='comments', on_delete=models.CASCADE)
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    author = models.ForeignKey(User, null=True, blank=True, default=None, on_delete=models.CASCADE)
     content = models.TextField()
-    created_on = models.DateTimeField(auto_now_add=True)
-    updated_on = models.DateTimeField(auto_now_add=True)
+    created_on = models.DateTimeField(default=timezone.now)
+    updated_on = models.DateTimeField(default=timezone.now)
     # manually deactivate inappropriate comments from admin site
     active = models.BooleanField(default=True)
     parent = models.ForeignKey('self', null=True, blank=True, related_name='replies', on_delete=models.CASCADE)
@@ -41,4 +40,4 @@ class Comment(models.Model):
         ordering = ('created_on',)
 
     def __str__(self):
-        return 'Comment by {}'.format(self.name)
+        return 'Comment by {}'.format(self.author)
