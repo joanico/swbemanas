@@ -14,7 +14,7 @@ class LoginForm(AuthenticationForm):
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
-        fields = ('name', 'content')
+        fields = ('author', 'content')
         widgets = {
             'content' : forms.Textarea(attrs={
                 'rows': '4',

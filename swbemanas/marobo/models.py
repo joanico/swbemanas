@@ -1,6 +1,8 @@
 from django.db import models
 from tinymce.models import HTMLField
 from django.urls import reverse
+from django.contrib.auth.models import User
+from django.utils import timezone
 
 
 class Post(models.Model):
@@ -26,7 +28,7 @@ class PostImage(models.Model):
 
 class Comment(models.Model):
     post = models.ForeignKey(Post, related_name='comments', on_delete=models.CASCADE)
-    name = models.CharField(max_length=80)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now_add=True)
