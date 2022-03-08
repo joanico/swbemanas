@@ -18,3 +18,4 @@ class PostImageAdmin(admin.ModelAdmin):
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
     list_display = ['author', 'content', 'active', 'created_on']
+    search_fields = ['content',]

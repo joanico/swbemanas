@@ -40,9 +40,9 @@
             </div>
             <!-- Comments Form -->
             <div class="col-md-3 display-all-comments">
-                {% if user.is_authenticated %}
                     <button type="button" onclick="document.getElementById('form1').style.display='block'"value="ShowMe" class="btn btn-info">Add new comment</button>
                     <!-- Comments Form -->
+                    {% if user.is_authenticated %}
                     <form action="." id="form1" style="display:none" method="post">
                         {% csrf_token %}
                         <!-- Hidden input for parent comment.id -->
@@ -62,52 +62,48 @@
                             </div>
                         </div>
                     </form>
-
+                    {% else %} <h3>You need to Login to comment</h3>
+                    {% endif %}
 
                     <!-- Comment with nested comments -->
                     <div class="comment">
-                        {% if user.is_authenticated %}
-                            {% for comment in comments %}
-                                <div class="commented">
-                                    <p class="info-author">{{ comment.author }} | {{ comment.created_on|date:'d-m-Y H:i' }}</p>
-                                    <p class="info-comment">
-                                        <img src="{% static 'icons/comment.svg' %}" class="icons-comment" alt="icon" width="20" height="20" title="comments"> {{ comment.content }}
-                                    </p>
-
-                                    {% for replay in comment.replies.all %}
-                                        <p class="info">{{ replay.author }} | {{ replay.created_on|date:'d-m-Y H:i' }}</p>
-                                        <p class="content-replay"><img src="{% static 'icons/replay.svg' %}" class="icons-replay" alt="icon" width="35" height="35" title="replay"> {{ replay.content }}</p>
-                                    {% endfor %}
-                                    <p>
-                                    <button class="btn btn-cta-secondary" data-id="{{ comment.id }} ">Replay</button>
-                                    </p>
-                               </div>
-
-                               <form action="." method="post" class="replay-comment" style="padding:10px; display:none;" id="form_{{ comment.id }}">
-                                    {% csrf_token %}
-                                    <!-- Hidden input for parent comment.id -->
-                                    <div class="form__group mb--30 mb-sm--20">
-                                        <div class="form-row">
-                                            <div class="col-12">
-                                                {{comment_form.content}}
-                                            </div>
+                        {% for comment in comments %}
+                            <div class="commented">
+                                <p class="info-author">{{ comment.author }} | {{ comment.created_on|date:'d-m-Y H:i' }}</p>
+                                <p class="info-comment">
+                                    <img src="{% static 'icons/comment.svg' %}" class="icons-comment" alt="icon" width="20" height="20" title="comments"> {{ comment.content }}
+                                </p>
+                                {% for replay in comment.replies.all %}
+                                    <p class="info">{{ replay.author }} | {{ replay.created_on|date:'d-m-Y H:i' }}</p>
+                                    <p class="content-replay"><img src="{% static 'icons/replay.svg' %}" class="icons-replay" alt="icon" width="35" height="35" title="replay"> {{ replay.content }}</p>
+                                {% endfor %}
+                                <p>
+                                <button class="btn btn-cta-secondary" data-id="{{ comment.id }} ">Replay</button>
+                                </p>
+                           </div>
+                           <form action="." method="post" class="replay-comment" style="padding:10px; display:none;" id="form_{{ comment.id }}">
+                                {% csrf_token %}
+                                <!-- Hidden input for parent comment.id -->
+                                <div class="form__group mb--30 mb-sm--20">
+                                    <div class="form-row">
+                                        <div class="col-12">
+                                            {{comment_form.content}}
                                         </div>
                                     </div>
-                                    <div class="form__group">
-                                        <div class="form-row">
-                                            <div class="col-12">
-                                                <input type="hidden" name="parent_id" value="{{ comment.id }}">
-                                                <input class="btn btn-primary" type="submit" value="Replay">
-                                            </div>
+                                </div>
+                                <div class="form__group">
+                                    <div class="form-row">
+                                        <div class="col-12">
+                                            <input type="hidden" name="parent_id" value="{{ comment.id }}">
+                                            <input class="btn btn-primary" type="submit" value="Replay">
                                         </div>
                                     </div>
-                                </form>
-                            {% empty %}
-                            <h4>There are no comments yet.</h4>
-                            {% endfor %}
-                        {% endif %}
+                                </div>
+                            </form>
+                        {% empty %}
+                        <h4>There are no comments yet.</h4>
+                        {% endfor %}
                     </div>
-                {% endif %}
             </div>
             <!-- end of comment form-->
         </div>
