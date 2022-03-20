@@ -61,7 +61,7 @@
                                 </div>
                             </div>
                         </div>
-                        {% else %} <h3>You need to Login to comment</h3>
+                        {% else %} <p class="error-messages">Please <a href="{% url 'login' %}">login</a> before add your comment here. If aren't please contact your admin</p>
                         {% endif %}
                     </form>
 
@@ -105,7 +105,7 @@
                                 </div>
                             </form>
                         {% empty %}
-                        <h4>There are no comments yet.</h4>
+                        <h4>There is no comment yet.</h4>
                         {% endfor %}
                     </div>
             </div>

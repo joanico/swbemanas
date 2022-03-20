@@ -346,6 +346,12 @@ h3.header-text {
     margin-bottom: 5px;
 }
 
+p.error-messages {
+    padding-bottom: 15px;
+    color: #ea365d;
+    margin: 5px;
+}
+
 .btn-info {
     margin-top: -45px;
 }
@@ -357,7 +363,6 @@ button.add-button {
 p.content-replay {
     font-style: italic;
     font-size: 12px;
-    padding-left: 15px;
 }
 
 p.info {
