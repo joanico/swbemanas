@@ -37,7 +37,7 @@ class Comment(models.Model):
 
     class Meta:
         # sort comments in chronological order by default
-        ordering = ('created_on',)
+        ordering = ('-created_on',)
 
     def __str__(self):
         if not self.author:

@@ -38,18 +38,18 @@
               </div>
             {% endfor %}
             </div>
-            <!-- Comments Form -->
-            <div class="col-md-3 display-all-comments">
+                <!-- Comments Form -->
+                <div class="col-md-3 display-all-comments">
                     <button type="button" onclick="document.getElementById('form1').style.display='block'"value="ShowMe" class="btn btn-info">Add new comment</button>
                     <!-- Comments Form -->
-                    {% if user.is_authenticated %}
                     <form action="." id="form1" style="display:none" method="post">
                         {% csrf_token %}
                         <!-- Hidden input for parent comment.id -->
                         <input type="hidden" name="parent_id" value="{{ comment.id }}">
+                        {% if user.is_authenticated %}
                         <div class="form__group mb--30 mb-sm--20">
                             <div class="form-row">
-                                <div class="col-12">
+                                <div class="col-6">
                                     {{comment_form.content}}
                                 </div>
                             </div>
@@ -61,13 +61,14 @@
                                 </div>
                             </div>
                         </div>
+                        {% else %} <h3>You need to Login to comment</h3>
+                        {% endif %}
                     </form>
-                    {% else %} <h3>You need to Login to comment</h3>
-                    {% endif %}
 
                     <!-- Comment with nested comments -->
                     <div class="comment">
                         {% for comment in comments %}
+                            {% if user.is_authenticated %}
                             <div class="commented">
                                 <p class="info-author">{{ comment.author }} | {{ comment.created_on|date:'d-m-Y H:i' }}</p>
                                 <p class="info-comment">
@@ -80,8 +81,11 @@
                                 <p>
                                 <button class="btn btn-cta-secondary" data-id="{{ comment.id }} ">Replay</button>
                                 </p>
-                           </div>
-                           <form action="." method="post" class="replay-comment" style="padding:10px; display:none;" id="form_{{ comment.id }}">
+                            </div>
+                            {% endif %}
+
+
+                            <form action="." method="post" class="replay-comment" style="padding:10px; display:none;" id="form_{{ comment.id }}">
                                 {% csrf_token %}
                                 <!-- Hidden input for parent comment.id -->
                                 <div class="form__group mb--30 mb-sm--20">
