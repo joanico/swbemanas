@@ -47,7 +47,7 @@ def detail_view(request, id):
                     replay_comment.parent = parent_obj
             # create comment object but do not save to database
             new_comment = comment_form.save(commit=False)
-            # set default for user who are logged can be create comment
+            # set default for user who are logged create comment
             if request.user.is_authenticated:
                     new_comment.author = request.user
             # assign ship to the comment

@@ -68,7 +68,6 @@
                     <!-- Comment with nested comments -->
                     <div class="comment">
                         {% for comment in comments %}
-                            {% if user.is_authenticated %}
                             <div class="commented">
                                 <p class="info-author">{{ comment.author }} | {{ comment.created_on|date:'d-m-Y H:i' }}</p>
                                 <p class="info-comment">
@@ -78,11 +77,12 @@
                                     <p class="info">{{ replay.author }} | {{ replay.created_on|date:'d-m-Y H:i' }}</p>
                                     <p class="content-replay"><img src="{% static 'icons/replay.svg' %}" class="icons-replay" alt="icon" width="35" height="35" title="replay"> {{ replay.content }}</p>
                                 {% endfor %}
-                                <p>
-                                <button class="btn btn-cta-secondary" data-id="{{ comment.id }} ">Replay</button>
-                                </p>
+                                {% if user.is_authenticated %}
+                                    <p>
+                                        <button class="btn btn-cta-secondary" data-id="{{ comment.id }} ">Replay</button>
+                                    </p>
+                                {% endif %}
                             </div>
-                            {% endif %}
 
 
                             <form action="." method="post" class="replay-comment" style="padding:10px; display:none;" id="form_{{ comment.id }}">
