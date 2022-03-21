@@ -69,13 +69,13 @@
                     <div class="comment">
                         {% for comment in comments %}
                             <div class="commented">
-                                <p class="info-author">{{ comment.author }} | {{ comment.created_on|date:'d-m-Y H:i' }}</p>
+                                <p class="info-author">{{ comment.author }} | {{ comment.created_on|timesince }}</p>
                                 <p class="info-comment">
-                                    <img src="{% static 'icons/comment.svg' %}" class="icons-comment" alt="icon" width="20" height="20" title="comments"> {{ comment.content }}
+                                    <img src="{% static 'icons/comment.svg' %}" class="icons-comment" alt="icon" width="20" height="20" title="comments"> {{ comment.content|safe|truncatewords_html:5000 }}
                                 </p>
                                 {% for replay in comment.replies.all %}
-                                    <p class="info">{{ replay.author }} | {{ replay.created_on|date:'d-m-Y H:i' }}</p>
-                                    <p class="content-replay"><img src="{% static 'icons/replay.svg' %}" class="icons-replay" alt="icon" width="35" height="35" title="replay"> {{ replay.content }}</p>
+                                    <p class="info">{{ replay.author }} | {{ replay.created_on|timesince }}</p>
+                                    <p class="content-replay"><img src="{% static 'icons/replay.svg' %}" class="icons-replay" alt="icon" width="35" height="35" title="replay"> {{ replay.content|safe|truncatewords_html:5000 }}</p>
                                 {% endfor %}
                                 {% if user.is_authenticated %}
                                     <p>
