@@ -28,9 +28,9 @@ body{
 }
 
 .navbar-default .navbar-brand {
-    color: #777;
+    color: #116f0b;
 	font-family: ProximaNovaA-bold;
-	font-size: 20px;	
+    margin-top: 5px;
 }
 
 ul.nav.navbar-nav.navbar-right {
@@ -43,7 +43,7 @@ a.navbar-brand {
 }
 
 .navbar-inverse .navbar-toggle {
-    border-color: cornflowerblue;
+    border-color: aliceblue;
 }
 
 .navbar-inverse .navbar-toggle:hover {
@@ -57,7 +57,7 @@ img.icons {
 
 span.logo1 {
     font-family: sans-serif;
-    font-size: 24px;
+    font-size: 30px;
 }
 
 span.logo1:hover {
