@@ -11,13 +11,12 @@
             {% for p in photos %}
                 {% if p.images %}
                 <div class="card" style="width: 18rem;">
-                    <img src="{{p.images.url }}" class="img-detail" alt="Card image cap">                  <div class="card-body">
-                        <a href="{% url 'blog' %}"><img src="{% static 'icons/message-circle.svg' %}" class="icons"></a>
-                  </div>
+                    <div class="card-body">
+                        <a href="javascript:void(0);" class="" data-toggle="modal" data-target="#tutorialsplaneModal_{{ p.id }}">
+                            <img src="{{p.images.url }}" class="img-detail" alt="Image"><img src="{% static 'icons/message-circle.svg' %}" class="icons">
+                        </a>
+                    </div>
                 </div>
-                    <a href="javascript:void(0);" class="" data-toggle="modal" data-target="#tutorialsplaneModal_{{ p.id }}">
-                        <img src="{{p.images.url }}" class="img-detail" alt="Image"><img src="{% static 'icons/message-circle.svg' %}" class="icons">
-                    </a>
                 {% else %}
                     <video width="530" height="440" controls autoplay>
                         <source src="{{ p.images.url }}" type="video/mp4"> </source>
@@ -25,18 +24,71 @@
                     <h3>Iha ne'e la iha photo</h3>
                 {% endif %}
             <!-- display modal -->
-            <div id="tutorialsplaneModal_{{ p.id }}" class="modal fade" role='dialog'>
-                <div class="modal-dialog modal-lg">
+            <div id="tutorialsplaneModal_{{ p.id }}" class="modal fade" tabindex="-1" role="dialog" arial-labelledby=myModalLabel">
+                <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                        <h4 class="modal-title">{{ p.name }}</h4>
                         </div>
                         <div class="modal-body">
-                            <img src="{{ p.images.url }}" style="width:100%;height:auto;">
+                            
+                            <div class="rows">
+                            <div class="col-md-8">
+                                <div id="myCarousel" class="carousel slide" data-ride="carousel" style="height:600px">
+                                    <!-- Indicators -->
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                    </ol>
+
+                                    <!-- Wrapper for slides -->
+                                    <div class="carousel-inner" role="listbox">
+                                        <div class="item active">
+                                            <img src="{{ p.images.url }}" style="width:100%;height:auto;">
+                                        </div>
+                                    </div>
+
+                                    <!-- Left and right controls -->
+                                    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="modal-body inline">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <img src="http://www.solidbackgrounds.com/images/2880x1800/2880x1800-tiffany-blue-solid-color-background.jpg" width="50" height="50" alt="..." class="img-circle">
+                                        </div>
+                                        <div class="col-md-9">
+                                            <small>Text</small>
+                                            <br/>
+                                            <span class="glyphicon glyphicon-heart"></span> Icon
+                                        </div>
+                                    </div>
+                                   <hr/>
+                                   
+                                    {% for comment_photo in comment_photo_form %}
+                                        {{ comment_photo }}
+                                    {% endfor %}
+                                    <p class="text-success">Text Text Text</p>
+                                    <br/>
+
+                                    <input placeholder="Comment" type="text" style="height:100px" class="form-control" />
+                                    <span class="text-mute">Please wrtie your openion.</span>
+                                    <button class="btn btn-sm btn-primary pull-right">Save</button>
+
+                                </div>
+                            </div>
+                        </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Taka</button>
                         </div>
                     </div>
                   </div>
@@ -117,6 +169,22 @@
             <!-- end of comment form-->
         </div>
 </div>
+
+
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<style>
+    .carousel-control .glyphicon-chevron-right, .carousel-control .icon-next {
+        margin-right: -382px;
+    }
+    .carousel-control .glyphicon-chevron-left, .carousel-control .icon-prev {
+        margin-left: -71px;
+    }
+
+</style>
+
 <script type="text/javascript">
 
     $('.btn-cta-secondary').click(function (e) {

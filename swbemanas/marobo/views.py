@@ -18,6 +18,7 @@ def blog_view(request):
     posts = Post.objects.all()
     return render(request, 'marobo/index.html', {'posts':posts})
 
+
 def detail_view(request, id):
     # get post object
     post = get_object_or_404(Post, id=id)
@@ -50,33 +51,32 @@ def detail_view(request, id):
             # set default for user who are logged create comment
             if request.user.is_authenticated:
                     new_comment.author = request.user
+            elif  request.user.is_anonymous: # AnonymousUser code
+                    new_comment.author = None
             # assign ship to the comment
             new_comment.post = post
             # save
             new_comment.save()
             # return direct to absolute url
             return HttpResponseRedirect(post.get_absolute_url())
+    
+    if request.method == 'POST':
+        cf = CommentPhotoForm(request.POST or None)
+        if cf.is_valid():
+            content = request.POST.get('content')
+            comment = CommentPhoto.objects.create(post = post, user = request.user, content = content)
+            comment.save()
+            return redirect(post.get_absolute_url())
+        else:
+            cf = CommentPhotoForm()
+
+            context ={
+            'comment_photo_form':cf,
+            }
+            return render(request, 'marobo/detail.html', context)
     else:
         comment_form = CommentForm()
     return render(request, 'marobo/detail.html', {'post': post, 'photos':photos, 'comments': comments, 'comment_form': comment_form})
-
-
-def comment_detailview(request, id):
-    if request.method == 'POST':
-            cf = CommentPhotoForm(request.POST or None)
-            if cf.is_valid():
-                content = request.POST.get('content')
-                comment = CommentPhoto.objects.create(post = post, user = request.user, content = content)
-                comment.save()
-                return redirect(post.get_absolute_url())
-            else:
-                cf = CommentPhotoForm()
-
-                context ={
-                'comment_form':cf,
-                }
-                return render(request, 'marobo/detail.html', context)
-
 
 def login_view(request):
     # request post method
