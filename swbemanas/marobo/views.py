@@ -33,7 +33,7 @@ class BlogDetail(FormMixin, DetailView):
         return reverse('detail', kwargs={'pk': self.object.id})
 
     def get_context_data(self, **kwargs):
-        context = super(BlogDetail, self).get_context_data(*args, **kwargs)
+        context = super(BlogDetail, self).get_context_data(**kwargs)
         context['blog'] = CommentForm(initial={'post': self.object})
         context['photos'] = PostImage.objects.filter(post=self.get_object())
         context['comments'] = Comment.objects.filter(post=self.get_object())
