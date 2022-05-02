@@ -61,18 +61,18 @@ def detail_view(request, id):
     return render(request, 'marobo/detail.html', {'post': post, 'photos':photos, 'comments': comments, 'comment_form': comment_form})
 
 
-def login_view(request):
+def login_view(request, *args, **kwargs):
+    redirect_to = kwargs.get('next', settings.LOGIN_REDIRECT_URL )
     # request post method
     if request.method == 'POST':
         form = AuthenticationForm(data=request.POST)
         if form.is_valid():
             user = form.get_user()
             login(request, user)
-            return redirect('blog')
+            return HttpResponseRedirect(redirect_to)
     else:
         form = AuthenticationForm()
     return render(request, 'registration/login.html', {'form': form})
-
 
 def logout_view(request):
     logout(request)
