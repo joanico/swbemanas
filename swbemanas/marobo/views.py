@@ -8,6 +8,7 @@ from .models import Post, PostImage, Comment
 from django.http import HttpResponseRedirect
 from django.conf import settings
 from .forms import CommentForm
+from django.core.paginator import Paginator, EmptyPage, InvalidPage 
 
 # Profile view but did not use yet
 def profile(request):
@@ -24,7 +25,17 @@ def detail_view(request, id):
     # Filter images
     photos = PostImage.objects.filter(post=post)
     # list of active parent comments
+    page = request.GET.get('page', 1)
+    paginator = Paginator(photos, 3)
     comments = post.comments.filter(active=True, parent__isnull=True)
+    try:
+        photos = paginator.page(page)
+    except InvalidPage:
+        # if the page contains no results (EmptyPage exception) or
+        # the page number is not an integer (PageNotAnInteger exception)
+        # return the first page
+        photos = paginator.page(1)
+
     if request.method == 'POST':
         # comment has been added
         comment_form = CommentForm(data=request.POST)
