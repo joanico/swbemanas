@@ -387,3 +387,16 @@ img.icons-replay {
     padding-left: 6px;
     padding-top: 10px;
 }
+
+.pagination {
+    margin: 45px;
+    padding-left: 250px;
+    background-color: azur
+}
+
+.my-custom-scrollbar {
+    position: relative;
+    width: 260px;
+    height: 960px;
+    overflow: auto;
+}

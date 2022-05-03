@@ -41,97 +41,100 @@
                 <!-- Comments Form -->
                 <div class="col-md-3 display-all-comments">
                     <button type="button" onclick="document.getElementById('form1').style.display='block'"value="ShowMe" class="btn btn-info">Add new comment</button>
-                    <!-- Comments Form -->
-                    <form action="." id="form1" style="display:none" method="post">
-                        {% csrf_token %}
-                        <!-- Hidden input for parent comment.id -->
-                        <input type="hidden" name="parent_id" value="{{ comment.id }}">
-                        {% if user.is_authenticated %}
-                        <div class="form__group mb--30 mb-sm--20">
-                            <div class="form-row">
-                                <div class="col-6">
-                                    {{comment_form.content}}
+                    <div class="my-custom-scrollbar my-custom-scrollbar-primary">
+                        <!-- Comments Form -->
+                        <form action="." id="form1" style="display:none" method="post">
+                            {% csrf_token %}
+                            <!-- Hidden input for parent comment.id -->
+                            <input type="hidden" name="parent_id" value="{{ comment.id }}">
+                            {% if user.is_authenticated %}
+                            <div class="form__group mb--30 mb-sm--20">
+                                <div class="form-row">
+                                    <div class="col-6">
+                                        {{comment_form.content}}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="form__group">
-                            <div class="form-row">
-                                <div class="col-12">
-                                    <button class="add-button" type="submit">Add comment</button>
+                            <div class="form__group">
+                                <div class="form-row">
+                                    <div class="col-12">
+                                        <button class="add-button" type="submit">Add comment</button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        {% else %} <p class="error-messages">Please <a href="{% url 'login' %}?next={{ request.path }}">login</a> before add your comment here. If aren't please contact your admin</p>
-                        {% endif %}
-                    </form>
+                            {% else %} <p class="error-messages">Please <a href="{% url 'login' %}?next={{ request.path }}">login</a> before add your comment here. If aren't please contact your admin</p>
+                            {% endif %}
+                        </form>
 
-                    <!-- Comment with nested comments -->
-                    <div class="comment">
-                        {% for comment in comments %}
-                            <div class="commented">
-                                <p class="info-author">{{ comment.author }} | {{ comment.created_on|timesince }}</p>
-                                <p class="info-comment">
-                                    <img src="{% static 'icons/comment.svg' %}" class="icons-comment" alt="icon" width="20" height="20" title="comments"> {{ comment.content|safe|truncatewords_html:5000 }}
-                                </p>
-                                {% for replay in comment.replies.all %}
-                                    <p class="info">{{ replay.author }} | {{ replay.created_on|timesince }}</p>
-                                    <p class="content-replay"><img src="{% static 'icons/replay.svg' %}" class="icons-replay" alt="icon" width="35" height="35" title="replay"> {{ replay.content|safe|truncatewords_html:5000 }}</p>
-                                {% endfor %}
-                                {% if user.is_authenticated %}
-                                    <p>
-                                        <button class="btn btn-cta-secondary" data-id="{{ comment.id }} ">Replay</button>
+                        <!-- Comment with nested comments -->
+                        <div class="comment">
+                            {% for comment in comments %}
+                                <div class="commented">
+                                    <p class="info-author">{{ comment.author }} | {{ comment.created_on|timesince }}</p>
+                                    <p class="info-comment">
+                                        <img src="{% static 'icons/comment.svg' %}" class="icons-comment" alt="icon" width="20" height="20" title="comments"> {{ comment.content|safe|truncatewords_html:5000 }}
                                     </p>
-                                {% endif %}
-                            </div>
+                                    {% for replay in comment.replies.all %}
+                                        <p class="info">{{ replay.author }} | {{ replay.created_on|timesince }}</p>
+                                        <p class="content-replay"><img src="{% static 'icons/replay.svg' %}" class="icons-replay" alt="icon" width="35" height="35" title="replay"> {{ replay.content|safe|truncatewords_html:5000 }}</p>
+                                    {% endfor %}
+                                    {% if user.is_authenticated %}
+                                        <p>
+                                            <button class="btn btn-cta-secondary" data-id="{{ comment.id }} ">Replay</button>
+                                        </p>
+                                    {% endif %}
+                                </div>
 
 
-                            <form action="." method="post" class="replay-comment" style="padding:10px; display:none;" id="form_{{ comment.id }}">
-                                {% csrf_token %}
-                                <!-- Hidden input for parent comment.id -->
-                                <div class="form__group mb--30 mb-sm--20">
-                                    <div class="form-row">
-                                        <div class="col-12">
-                                            {{comment_form.content}}
+                                <form action="." method="post" class="replay-comment" style="padding:10px; display:none;" id="form_{{ comment.id }}">
+                                    {% csrf_token %}
+                                    <!-- Hidden input for parent comment.id -->
+                                    <div class="form__group mb--30 mb-sm--20">
+                                        <div class="form-row">
+                                            <div class="col-12">
+                                                {{comment_form.content}}
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="form__group">
-                                    <div class="form-row">
-                                        <div class="col-12">
-                                            <input type="hidden" name="parent_id" value="{{ comment.id }}">
-                                            <input class="btn btn-primary" type="submit" value="Replay">
+                                    <div class="form__group">
+                                        <div class="form-row">
+                                            <div class="col-12">
+                                                <input type="hidden" name="parent_id" value="{{ comment.id }}">
+                                                <input class="btn btn-primary" type="submit" value="Replay">
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </form>
-                        {% empty %}
-                        <h4>There is no comment yet.</h4>
-                        {% endfor %}
+                                </form>
+                            {% empty %}
+                            <h4>There is no comment yet.</h4>
+                            {% endfor %}
+                        </div>
                     </div>
-            </div>
+                </div>
             <!-- end of comment form-->
         </div>
 
         <!-- Pagination -->
-        <div class="pagination">
-            <span class="step-links">
-                {% if photos.has_previous %}
-                    <a href="?page=1">&laquo; first</a>
-                    <a href="?page={{ photos.previous_page_number }}">previous</a>
-                {% endif %}
-        
-                <span class="current">
-                    Page {{ photos.number }} of {{ photos.paginator.num_pages }}.
+        <nav aria-label="...">
+            <div class="pagination">
+                <span class="step-links">
+                    {% if photos.has_previous %}
+                        <a href="?page=1">&laquo; first</a>
+                        <a href="?page={{ photos.previous_page_number }}">previous</a>
+                    {% endif %}
+            
+                    <span class="current">
+                        Page {{ photos.number }} of {{ photos.paginator.num_pages }}.
+                    </span>
+            
+                    {% if photos.has_next %}
+                        <a href="?page={{ photos.next_page_number }}">next</a>
+                        <a href="?page={{ photos.paginator.num_pages }}">last &raquo;</a>
+                    {% endif %}
                 </span>
-        
-                {% if photos.has_next %}
-                    <a href="?page={{ photos.next_page_number }}">next</a>
-                    <a href="?page={{ photos.paginator.num_pages }}">last &raquo;</a>
-                {% endif %}
-            </span>
-        </div>
+            </div>
+        </nav>
         <!-- END Pagination -->
-
 </div>
 <script type="text/javascript">
 
@@ -139,7 +142,6 @@
         var id = $(e.currentTarget).data('id')
         $('#form_' + id).toggle()
     })
-
 </script>
 {% endblock %}
 

@@ -26,7 +26,7 @@ def detail_view(request, id):
     photos = PostImage.objects.filter(post=post)
     # list of active parent comments
     page = request.GET.get('page', 1)
-    paginator = Paginator(photos, 3)
+    paginator = Paginator(photos, 9)
     comments = post.comments.filter(active=True, parent__isnull=True)
     try:
         photos = paginator.page(page)
