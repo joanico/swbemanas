@@ -271,8 +271,8 @@ p.description-text {
 }
 
 .img-detail {
-    width: 250px;
-    height: 210px;
+    width: 388px;
+    height: 220px;
     float: left;
     object-position: center;
     object-fit: cover;
@@ -389,14 +389,19 @@ img.icons-replay {
 }
 
 .pagination {
-    margin: 45px;
+    margin: 30px;
     padding-left: 250px;
     background-color: azur
 }
 
 .my-custom-scrollbar {
     position: relative;
-    width: 260px;
+    width: 270px;
     height: 960px;
     overflow: auto;
+}
+
+button.btn.btn-info {
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
