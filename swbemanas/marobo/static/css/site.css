@@ -388,17 +388,17 @@ img.icons-replay {
     padding-top: 10px;
 }
 
-.pagination {
-    margin: 30px;
-    padding-left: 250px;
-    background-color: azur
-}
-
 .my-custom-scrollbar {
     position: relative;
     width: 270px;
-    height: 960px;
+    height: 947px;
     overflow: auto;
+}
+
+ul.pagination.justify-content-center {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
 }
 
 button.btn.btn-info {
