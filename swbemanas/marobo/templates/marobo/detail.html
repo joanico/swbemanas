@@ -7,7 +7,15 @@
     <a href="{% url 'blog' %}"><img src={% static 'icons/back1.png' %} class="icon-back" alt="icon" width="40" height="40"></a>
     <div class="row">
         <div class="col-md-9 display-all-posts">
-            <p class="description-text">{{ post.descriptions|safe|truncatewords_html:5000000 }}</p>
+            <div id="profile-description">
+                <div class="text show-more-height">
+                    {{ post.title }} 
+                    <br /><br />
+                    <p class="description-text">{{ post.descriptions|safe|truncatewords_html:5000000 }}</p>
+                </div>
+                <div class="show-more">(Show More)</div>
+            </div><!-- [End] #profile-description -->
+
             {% for p in photos %}
                 {% if p.images %}
                     <a href="javascript:void(0);" class="" data-toggle="modal" data-target="#tutorialsplaneModal_{{ p.id }}">
@@ -166,6 +174,11 @@
         var id = $(e.currentTarget).data('id')
         $('#form_' + id).toggle()
     })
+
+    $(".show-more").click(function () {
+        $(this).text("(Show Less)");
+    $(".text").toggleClass("show-more-height");
+    });
 </script>
 {% endblock %}
 

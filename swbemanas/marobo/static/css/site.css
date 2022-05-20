@@ -405,3 +405,37 @@ button.btn.btn-info {
     margin-top: 20px;
     margin-bottom: 10px;
 }
+
+/* SHOW MORE and LESS */
+
+#profile-description {
+    margin-top: 20px; 
+    position:relative;
+}
+#profile-description .text {
+    width: 660px; 
+    margin-bottom: 5px; 
+    color: #777; 
+    padding: 0 15px; 
+    position:relative; 
+    font-family: Arial; 
+    font-size: 14px; 
+    display: block;
+}
+#profile-description .show-more {
+    width: 690px; 
+    color: #777; 
+    position:relative; 
+    font-size: 12px; 
+    padding-top: 5px; 
+    height: 20px; 
+    text-align: center; 
+    background: #f1f1f1; 
+    cursor: pointer;
+}
+#profile-description .show-more:hover { 
+    color: #1779dd;
+}
+#profile-description .show-more-height { 
+    height: 62px; 
+    overflow:hidden; }
