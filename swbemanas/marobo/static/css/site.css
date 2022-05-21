@@ -238,7 +238,7 @@ img.icon-back {
 
 .display-all-posts {
     background-color: #fff;
-    margin-top: 21px;
+    margin-top: 14px;
 }
 
 /* Small devices (tablets, 768px and up) */
@@ -250,7 +250,6 @@ p.description {
 
 p.description-text {
     text-align: left;
-    margin: 20px;
     padding-top: 0px;
 }
 
@@ -391,7 +390,7 @@ img.icons-replay {
 .my-custom-scrollbar {
     position: relative;
     width: 270px;
-    height: 947px;
+    height: 988px;
     overflow: auto;
 }
 
@@ -402,7 +401,7 @@ ul.pagination.justify-content-center {
 }
 
 button.btn.btn-info {
-    margin-top: 20px;
+    margin-top: 15px;
     margin-bottom: 10px;
 }
 
@@ -413,7 +412,6 @@ button.btn.btn-info {
     position:relative;
 }
 #profile-description .text {
-    width: 660px; 
     margin-bottom: 5px; 
     color: #777; 
     padding: 0 15px; 
@@ -423,11 +421,11 @@ button.btn.btn-info {
     display: block;
 }
 #profile-description .show-more {
-    width: 690px; 
+    margin: 12px;
     color: #777; 
     position:relative; 
     font-size: 12px; 
-    padding-top: 5px; 
+    padding: 2px; 
     height: 20px; 
     text-align: center; 
     background: #f1f1f1; 
@@ -437,5 +435,11 @@ button.btn.btn-info {
     color: #1779dd;
 }
 #profile-description .show-more-height { 
-    height: 62px; 
+    height: 260px; 
     overflow:hidden; }
+
+p#title-detail {
+    padding-left: 12px;
+    font-size: 20px;
+    margin-bottom: -40px;
+}

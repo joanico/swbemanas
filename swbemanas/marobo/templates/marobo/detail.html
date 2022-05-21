@@ -8,12 +8,12 @@
     <div class="row">
         <div class="col-md-9 display-all-posts">
             <div id="profile-description">
+                <p id="title-detail">{{ post.title }}</p> 
                 <div class="text show-more-height">
-                    {{ post.title }} 
                     <br /><br />
                     <p class="description-text">{{ post.descriptions|safe|truncatewords_html:5000000 }}</p>
                 </div>
-                <div class="show-more">(Show More)</div>
+                <div class="show-more">Show More</div>
             </div><!-- [End] #profile-description -->
 
             {% for p in photos %}
@@ -176,7 +176,7 @@
     })
 
     $(".show-more").click(function () {
-        $(this).text("(Show Less)");
+        $(this).text("Show Less");
     $(".text").toggleClass("show-more-height");
     });
 </script>
