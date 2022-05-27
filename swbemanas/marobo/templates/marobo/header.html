@@ -6,22 +6,18 @@
         <!-- This div navbar only to display in android resolution -->
         <div class="navbar-header"> 
            <button type="button" class="navbar-toggle" data-toggle="" data-target="#navigationbar">
-                {% if user.is_authenticated %}
-                <span>{% trans 'Welcome' %} {{ user.first_name|default:user.username }}</span>
+                <span>Welcome {{ user.first_name|default:user.username }}</span>
                         <img src="{% static 'icons/user.svg' %}" class="rounded-circle" alt="{{  user.username }}" width="25" height="25">
                         <a href="{% url 'profile' %}"><span class="icon-settings">Settings</span></a>
-                {% endif  %}
             </button>
             <a class="navbar-brand" href="/"><span class="logo1">Marobo</span></a>
         </div>
         <!-- end of navbar for android resolution -->
         <div class="collapse navbar-collapse" id="navigationbar">
             <ul class="nav navbar-nav navbar-right">
-                {% if user.is_authenticated %}
-                        <span>{% trans 'Welcome' %} {{ user.first_name|default:user.username }}</span>
+                        <span>Welcome {{ user.first_name|default:user.username }}</span>
                         <img src="{% static 'icons/user.svg' %}" class="rounded-circle" alt="{{  user.username }}" width="25" height="25">
                         <a href="{% url 'profile' %}"><span class="icon-settings">Settings</span></a>
-                {% endif  %}
             <ul class="dropdown-menu">
             {% if user.is_authenticated %}
                 {% if user.is_staff %}
