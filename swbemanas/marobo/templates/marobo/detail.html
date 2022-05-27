@@ -39,6 +39,7 @@
                             <img src="{{ p.images.url }}" style="width:100%;height:auto;">
                         </div>
                         <div class="modal-footer">
+                            <p class="modal-title">{{ p.descriptions|safe|truncatewords_html:5000000 }}</p>
                             <button type="button" class="btn btn-default" data-dismiss="modal">Taka</button>
                         </div>
                     </div>
@@ -46,6 +47,7 @@
               </div>
             {% endfor %}
             </div>
+
                 <!-- Comments Form -->
                 <div class="col-md-3 display-all-comments">
                     <button type="button" onclick="document.getElementById('form1').style.display='block'"value="ShowMe" class="btn btn-info">Add new comment</button>
