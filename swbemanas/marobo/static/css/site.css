@@ -450,8 +450,13 @@ p#title-detail {
 }
 
 .carousel-control .glyphicon-chevron-right, .carousel-control .icon-next {
-    margin-right: -382px;
+    margin-right: -51px;
 }
 .carousel-control .glyphicon-chevron-left, .carousel-control .icon-prev {
-    margin-left: -71px;
+    margin-left: -51px;
+}
+
+img.img-carousel.center-block {
+    height: 100%;
+    object-fit: cover;
 }

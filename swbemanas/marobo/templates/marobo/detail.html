@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content %}
-<!--Carousel Wrapper-->
+<!--Contaier -->
 <div class="container detail">
     <a href="{% url 'blog' %}"><img src={% static 'icons/back1.png' %} class="icon-back" alt="icon" width="40" height="40"></a>
     <div class="row">
@@ -22,32 +22,30 @@
                         <img src="{{p.images.url }}" class="img-detail" alt="Image">
                     </a>
                 {% else %}
-                    <video width="530" height="440" controls autoplay>
-                        <source src="{{ p.images.url }}" type="video/mp4"> </source>
-                    </video>
                     <h3>Iha ne'e la iha photo</h3>
                 {% endif %}
             <!-- display modal -->
-            <div id="tutorialsplaneModal_{{ p.id }}" class="modal fade" role='dialog'>
+            <div id="tutorialsplaneModal_{{ p.id }}" class="modal fade modal-fullscreen" role='dialog'>
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                             <h4 class="modal-title">{{ p.name }}</h4>
                         </div>
+                        <!--The main div for carousel-->
                         <div class="row">
-                            <div class="col-md-8">
+                            <div class="col-md-12">
                                 <div id="myCarousel_{{p.id}}" class="carousel slide" data-ride="carousel" style="height:400px">
                                 <!-- Wrapper for slides -->
                                 <div class="carousel-inner" role="listbox">
                                     {% for photo in photos %}
-                                        {% if forloop.counter == 1 %}
+                                        {% if forloop.first %}
                                         <div class="item active">
                                         {% else %}
                                         <div class="item">
                                         {% endif %}
                                         {% if photo.images %}
-                                            <img src="{{ photo.images.url }}" alt="Image" style="width:100%;">
+                                            <img class="img-carousel center-block" src="{{ photo.images.url }}" alt="Image" style="width:100%;">
                                         {% endif %}
                                     <div class="carousel-caption">
                                         <h3>{{ photo.name }}</h3>
@@ -67,27 +65,13 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="modal-body inline">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <span class="glyphicon glyphicon-heart"> {{ p.name }} </span>
-                                            <small class="modal-title">
-                                                {{ p.descriptions|safe|truncatewords_html:5000000 }}
-                                            </small>
-                                            <br/>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Taka</button>
-                            </div>
                         </div>
+                        <!--End carousel-->
                     </div>
                 </div>
             </div>
-                {% endfor %}
+            {% endfor %}
+        </div>
 
 
                 <!-- Comments Form -->
