@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content %}
-<!--Carousel Wrapper-->
+<!--Contaier -->
 <div class="container detail">
     <a href="{% url 'blog' %}"><img src={% static 'icons/back1.png' %} class="icon-back" alt="icon" width="40" height="40"></a>
     <div class="row">
@@ -18,35 +18,60 @@
 
             {% for p in photos %}
                 {% if p.images %}
-                    <a href="javascript:void(0);" class="" data-toggle="modal" data-target="#tutorialsplaneModal_{{ p.id }}">
+                    <a href="javascript:void(0);" class="" data-toggle="modal" data-target="#imageModal_{{ p.id }}">
                         <img src="{{p.images.url }}" class="img-detail" alt="Image">
                     </a>
                 {% else %}
-                    <video width="530" height="440" controls autoplay>
-                        <source src="{{ p.images.url }}" type="video/mp4"> </source>
-                    </video>
                     <h3>Iha ne'e la iha photo</h3>
                 {% endif %}
             <!-- display modal -->
-            <div id="tutorialsplaneModal_{{ p.id }}" class="modal fade" role='dialog'>
+            <div id="imageModal_{{ p.id }}" class="modal fade" role='dialog'>
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                       <h4 class="modal-title">{{ p.name }}</h4>
                         </div>
-                        <div class="modal-body">
-                            <img src="{{ p.images.url }}" style="width:100%;height:auto;">
+                        <!--The main div for carousel-->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div id="gallery_{{p.id}}" class="carousel slide">
+                                <!-- Wrapper for slides -->
+                                <div class="carousel-inner" role="listbox">
+                                    {% for img in photos %}
+                                        {% if p.id == img.id %}
+                                        <div class="item active">
+                                        {% else %}
+                                        <div class="item">
+                                        {% endif %}
+                                        {% if img.images %}
+                                            <img class="img-carousel center-block" src="{{ img.images.url }}" alt="Image" style="width:100%;">
+                                        {% endif %}
+                                    <div class="carousel-caption">
+                                        <h3>{{ img.name }}</h3>
+                                    </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+
+                                    <!-- Left and right controls -->
+                                    <a class="left carousel-control" href="#gallery_{{p.id}}" role="button" data-slide="prev">
+                                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="right carousel-control" href="#gallery_{{p.id}}" role="button" data-slide="next">
+                                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="modal-footer">
-                            <p class="modal-title">{{ p.descriptions|safe|truncatewords_html:5000000 }}</p>
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Taka</button>
-                        </div>
+                        <!--End carousel-->
                     </div>
-                  </div>
-              </div>
-            {% endfor %}
+                </div>
             </div>
+            {% endfor %}
+        </div>
+
 
                 <!-- Comments Form -->
                 <div class="col-md-3 display-all-comments">
@@ -181,6 +206,7 @@
         $(this).text("Show Less");
     $(".text").toggleClass("show-more-height");
     });
+
 </script>
 {% endblock %}
 
