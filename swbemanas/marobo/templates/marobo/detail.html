@@ -18,14 +18,14 @@
 
             {% for p in photos %}
                 {% if p.images %}
-                    <a href="javascript:void(0);" class="" data-toggle="modal" data-target="#tutorialsplaneModal_{{ p.id }}">
+                    <a href="javascript:void(0);" class="" data-toggle="modal" data-target="#imageModal_{{ p.id }}">
                         <img src="{{p.images.url }}" class="img-detail" alt="Image">
                     </a>
                 {% else %}
                     <h3>Iha ne'e la iha photo</h3>
                 {% endif %}
             <!-- display modal -->
-            <div id="tutorialsplaneModal_{{ p.id }}" class="modal fade" role='dialog'>
+            <div id="imageModal_{{ p.id }}" class="modal fade" role='dialog'>
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -38,7 +38,7 @@
                                 <!-- Wrapper for slides -->
                                 <div class="carousel-inner" role="listbox">
                                     {% for img in photos %}
-                                        {% if forloop.counter0 == 0 %}
+                                        {% if p.id == img.id %}
                                         <div class="item active">
                                         {% else %}
                                         <div class="item">
