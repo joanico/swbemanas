@@ -140,22 +140,6 @@ span.logo {
 }
 
 /* Responsive design for image heights */
-@media (min-width: 1200px)
-.col-lg-4 {
-    width: 33.33333333%;
-}
-
-@media (min-width: 992px)
-.col-md-6 {
-    width: 45% !important;
-}
-
-.container {
-  @media (min-width: @screen-xlg-min) {
-    width: @container-xlg;
-  }
-}
-
 .card-body-list{
     margin: 15px;
     font-size: 14px;
@@ -247,8 +231,6 @@ img.icon-back {
 }
 
 /* Small devices (tablets, 768px and up) */
-@media (min-width: @screen-sm-min) { ... }
-
 p.description {
     font-size: large;
 }
@@ -275,12 +257,40 @@ p.description-text {
 }
 
 .img-detail {
-    width: 388px;
+    width: 380px;
     height: 220px;
     float: left;
     object-position: center;
     object-fit: cover;
     margin: 10px;
+}
+
+@media (max-width:767px) {
+    .img-detail {
+        max-width: 100%;
+        max-height: 100%;
+    }
+}
+
+@media (min-width:768px) {
+    .img-detail {
+        max-width: 340px;
+        max-height: 340px;
+    }
+}
+
+@media (min-width:992px) {
+    .img-detail {
+        max-width: 350px;
+        max-height: 350px;
+    }
+}
+
+@media (min-width:1200px) {
+    .img-detail {
+        max-width: 400px;
+        max-height: 400px;
+    }
 }
 
 .divider:after,
@@ -289,16 +299,6 @@ p.description-text {
   flex: 1;
   height: 1px;
   background: #eee;
-}
-
-.h-custom {
-  height: calc(100% - 73px);
-}
-
-@media (max-width: 450px) {
-  .h-custom {
-    height: 100%;
-  }
 }
 
 /* PROFILE PAGE */
@@ -447,13 +447,12 @@ button.btn.btn-info {
 }
 #profile-description .show-more {
     margin: 12px;
-    color: #777; 
+    color: #0eb7e0; 
     position:relative; 
     font-size: 12px; 
     padding: 2px; 
     height: 20px; 
     text-align: center; 
-    background: #f1f1f1; 
     cursor: pointer;
 }
 #profile-description .show-more:hover { 
