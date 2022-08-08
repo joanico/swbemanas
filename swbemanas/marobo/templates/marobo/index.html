@@ -20,8 +20,8 @@
                     <img class="card-img-top" src="{{ post.image.url }}" alt="Card image cap">
                     <div class="card-body-list">
                         <h4 class="card-title white-text">{{ post.title }}</h4>
-                        <p class="card-text">{{ post.descriptions|safe|truncatewords_html:25 }}</p>
-                        <a href="{% url 'detail' post.id %}" class="btn btn-primary btn-md">Hare detallu</a>
+                        <p class="card-text">{{ post.descriptions|safe|truncatewords_html:15 }}</p>
+                        <a href="{% url 'detail' post.id %}" class="class="card-link">Read more</a>
                     </div>
                 </div>
             </div>

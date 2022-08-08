@@ -116,32 +116,57 @@ span.logo {
 /* Prevent image stretching is it's resized */
 .card-img-top {
     object-fit: cover;
-    flex-grow: 1;
-    width:100%;
-    height: 165px;
+    object-position: center;
+    max-width:250px;
+    height: auto;
 }
 
-/* Hover effects */
-.w3-card {
-    transition: -webkit-transform 0.3s ease;
-    font-size: 1em;
-    overflow: hidden;
-    margin-top: 20px;
-    border-radius: 8px;
-    border: 1px solid #d9e2e7;
-    box-shadow: 0 5px 10px 0 rgb(42 57 66 / 20%);
-    background-color: #fafdff;
-    height: 380px;
-    max-width: 98%;
-}
 
 .card:hover {
   transform: scale(1.01, 1.01);
 }
 
+/* media screen for img top card */
+@media only screen and (min-device-width: 414px){
+    .card-img-top {
+        max-width: 160px;
+        display: flex;
+    }
+}
+
+@media only screen and (min-device-width: 480px){
+    .card-img-top {
+        max-width: 210px;
+        display: flex;
+    }
+}
+
+@media only screen and (min-device-width: 768px){
+    .card-img-top {
+        max-width: 210px;
+        display: flex;
+    }
+}
+
+@media only screen and (min-device-width: 1024px){
+    .card-img-top {
+        max-width: 160px;
+        display: flex;
+        height: 220px;
+    }
+}
+
+@media only screen and (min-device-width: 1200px){
+    .card-img-top {
+        max-width: 170px;
+        display: flex;
+        height: 210px;
+    }
+}
+
 /* Responsive design for image heights */
 .card-body-list{
-    margin: 15px;
+    padding-left: 10px;
     font-size: 14px;
     font-family: Raleway, sans-serif;
 }
@@ -150,6 +175,88 @@ span.logo {
 .col-12.col-md-6.col-md-4.mb-3 {
     bottom: 10px;
 }
+
+/* Hover effects */
+.w3-card {
+    transition: -webkit-transform 0.3s ease;
+    font-size: 1em;
+    overflow: hidden;
+    margin-top: 20px;
+    margin-bottom: 6px;
+    padding-bottom: 3px;
+    border-radius: 8px;
+    border: 1px solid #d9e2e7;
+    box-shadow: 0 5px 10px 0 rgb(42 57 66 / 20%);
+    background-color: #fafdff;
+    height: auto;
+    width: 705px;
+}
+
+/* media screen for card */
+@media only screen and (min-device-width: 414px){
+    .w3-card {
+        max-width: 385px;
+        max-height: 170px;
+        display: flex;
+    }
+}
+
+@media only screen and (min-device-width: 480px){
+    .w3-card {
+        max-width: 705px;
+        max-height: 355px;
+        display: flex;
+    }
+}
+
+@media only screen and (min-device-width: 768px){
+    .w3-card {
+        max-width: 705px;
+        max-height: 190px;
+        display: flex;
+    }
+}
+
+@media only screen and (min-device-width: 1024px){
+    .w3-card {
+        max-width: 315px;
+        max-height: 315px;
+        display: flex;
+    }
+}
+
+@media only screen and (min-device-width: 1200px){
+    .w3-card {
+        max-width: 380px;
+        max-height: 380px;
+        display: flex;
+    }
+}
+
+.card {
+    background: #fff;
+    display: inline-block;
+    border: 1px solid #ddd;
+  }
+
+  .image {
+    float: left;
+    background: #000;
+    width: 25%;
+    height: 150px
+  }
+
+  .content {
+    float: left;
+    height: 140px;
+    width: 73%;
+    overflow: hidden;
+    padding: 5px;
+  }
+
+  .content h4 {
+    margin: 5px 0;
+  }
 
 /* FOOTER */
 .footer-copyright.text-center.py-3 {
