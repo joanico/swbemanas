@@ -169,6 +169,7 @@ span.logo {
     padding-left: 10px;
     font-size: 14px;
     font-family: Raleway, sans-serif;
+    padding-bottom: 5px;
 }
 
 /* index bottom */ 
@@ -183,7 +184,6 @@ span.logo {
     overflow: hidden;
     margin-top: 20px;
     margin-bottom: 6px;
-    padding-bottom: 3px;
     border-radius: 8px;
     border: 1px solid #d9e2e7;
     box-shadow: 0 5px 10px 0 rgb(42 57 66 / 20%);
