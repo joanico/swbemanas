@@ -91,13 +91,51 @@ span.logo {
 
 
 .img-responsive {
-	margin-top: -5px;
     object-fit: cover;
-    object-position: bottom;
 	width:  100%;
-	height: 450px;
-    border-bottom-right-radius: 50% 5%;
-    border-bottom-left-radius: 50% 5%;
+	height: auto;
+    border-bottom-right-radius: 10% 2%;
+    border-bottom-left-radius: 10% 2%;
+}
+
+/* media screen for img top card */
+@media only screen and (min-device-width: 414px){
+    .img-responsive {
+        max-width: 420px;
+        height: 375px;
+    }
+}
+
+@media only screen and (min-device-width: 480px){
+    .img-responsive {
+        max-width: 740px;
+        height: 390px;
+    }
+}
+
+@media only screen and (min-device-width: 768px){
+    .img-responsive {
+        max-width: 770px;
+        height: 415px;
+    }
+}
+
+@media only screen and (min-device-width: 1024px){
+    .img-responsive {
+        max-width: 1025px;
+        height: 460px;
+    }
+}
+
+@media only screen and (min-device-width: 1200px){
+    .img-responsive {
+        max-width: 1450px;
+        height: 560px;
+        padding-left: 140px;
+        padding-right: 140px;
+        border-bottom-right-radius: 60% 5%;
+        border-bottom-left-radius: 60% 5%;
+    }
 }
 
 .row.innovation {
@@ -117,7 +155,7 @@ span.logo {
 .card-img-top {
     object-fit: cover;
     object-position: center;
-    max-width:250px;
+    width: 100%;
     height: auto;
 }
 
@@ -150,17 +188,17 @@ span.logo {
 
 @media only screen and (min-device-width: 1024px){
     .card-img-top {
-        max-width: 160px;
-        display: flex;
-        height: 220px;
+        max-width: 312px;
+        display: block;
+        height: 150px;
     }
 }
 
 @media only screen and (min-device-width: 1200px){
     .card-img-top {
-        max-width: 170px;
-        display: flex;
-        height: 210px;
+        max-width: 360px;
+        display: block;
+        height: 150px;
     }
 }
 
@@ -186,10 +224,10 @@ span.logo {
     margin-bottom: 6px;
     border-radius: 8px;
     border: 1px solid #d9e2e7;
-    box-shadow: 0 5px 10px 0 rgb(42 57 66 / 20%);
+    box-shadow: 0 5px 10px 0 rgb(42 57 66 / 10%);
     background-color: #fafdff;
-    height: auto;
-    width: 705px;
+    height: 400px;
+    width: 100%;
 }
 
 /* media screen for card */
@@ -204,7 +242,7 @@ span.logo {
 @media only screen and (min-device-width: 480px){
     .w3-card {
         max-width: 705px;
-        max-height: 355px;
+        max-height: 150px;
         display: flex;
     }
 }
@@ -220,16 +258,16 @@ span.logo {
 @media only screen and (min-device-width: 1024px){
     .w3-card {
         max-width: 315px;
-        max-height: 315px;
-        display: flex;
+        max-height: 325px;
+        display: block;
     }
 }
 
 @media only screen and (min-device-width: 1200px){
     .w3-card {
-        max-width: 380px;
-        max-height: 380px;
-        display: flex;
+        max-width: 360px;
+        max-height: 320px;
+        display: block;
     }
 }
 
