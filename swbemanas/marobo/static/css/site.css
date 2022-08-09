@@ -64,7 +64,7 @@ span.logo1:hover {
     color: #0cb0f4;
 }
 
-.container {
+.container.index {
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
@@ -91,13 +91,51 @@ span.logo {
 
 
 .img-responsive {
-	margin-top: -5px;
     object-fit: cover;
-    object-position: bottom;
 	width:  100%;
-	height: 450px;
-    border-bottom-right-radius: 50% 5%;
-    border-bottom-left-radius: 50% 5%;
+	height: auto;
+    border-bottom-right-radius: 10% 2%;
+    border-bottom-left-radius: 10% 2%;
+}
+
+/* media screen for img top card */
+@media only screen and (min-device-width: 414px){
+    .img-responsive {
+        max-width: 420px;
+        height: 375px;
+    }
+}
+
+@media only screen and (min-device-width: 480px){
+    .img-responsive {
+        max-width: 740px;
+        height: 390px;
+    }
+}
+
+@media only screen and (min-device-width: 768px){
+    .img-responsive {
+        max-width: 770px;
+        height: 415px;
+    }
+}
+
+@media only screen and (min-device-width: 1024px){
+    .img-responsive {
+        max-width: 1025px;
+        height: 460px;
+    }
+}
+
+@media only screen and (min-device-width: 1200px){
+    .img-responsive {
+        max-width: 1450px;
+        height: 560px;
+        padding-left: 140px;
+        padding-right: 140px;
+        border-bottom-right-radius: 60% 5%;
+        border-bottom-left-radius: 60% 5%;
+    }
 }
 
 .row.innovation {
@@ -116,9 +154,65 @@ span.logo {
 /* Prevent image stretching is it's resized */
 .card-img-top {
     object-fit: cover;
-    flex-grow: 1;
-    width:100%;
-    height: 165px;
+    object-position: center;
+    width: 100%;
+    height: auto;
+}
+
+
+.card:hover {
+  transform: scale(1.01, 1.01);
+}
+
+/* media screen for img top card */
+@media only screen and (min-device-width: 414px){
+    .card-img-top {
+        max-width: 160px;
+        display: flex;
+    }
+}
+
+@media only screen and (min-device-width: 480px){
+    .card-img-top {
+        max-width: 210px;
+        display: flex;
+    }
+}
+
+@media only screen and (min-device-width: 768px){
+    .card-img-top {
+        max-width: 210px;
+        display: flex;
+    }
+}
+
+@media only screen and (min-device-width: 1024px){
+    .card-img-top {
+        max-width: 312px;
+        display: block;
+        height: 150px;
+    }
+}
+
+@media only screen and (min-device-width: 1200px){
+    .card-img-top {
+        max-width: 360px;
+        display: block;
+        height: 150px;
+    }
+}
+
+/* Responsive design for image heights */
+.card-body-list{
+    padding-left: 10px;
+    font-size: 14px;
+    font-family: Raleway, sans-serif;
+    padding-bottom: 5px;
+}
+
+/* index bottom */ 
+.col-12.col-md-6.col-md-4.mb-3 {
+    bottom: 10px;
 }
 
 /* Hover effects */
@@ -127,45 +221,80 @@ span.logo {
     font-size: 1em;
     overflow: hidden;
     margin-top: 20px;
+    margin-bottom: 6px;
     border-radius: 8px;
     border: 1px solid #d9e2e7;
-    box-shadow: 0 5px 10px 0 rgb(42 57 66 / 20%);
+    box-shadow: 0 5px 10px 0 rgb(42 57 66 / 10%);
     background-color: #fafdff;
-    height: 380px;
-    max-width: 98%;
+    height: 400px;
+    width: 100%;
 }
 
-.card:hover {
-  transform: scale(1.01, 1.01);
+/* media screen for card */
+@media only screen and (min-device-width: 414px){
+    .w3-card {
+        max-width: 385px;
+        max-height: 170px;
+        display: flex;
+    }
 }
 
-/* Responsive design for image heights */
-@media (min-width: 1200px)
-.col-lg-4 {
-    width: 33.33333333%;
+@media only screen and (min-device-width: 480px){
+    .w3-card {
+        max-width: 705px;
+        max-height: 150px;
+        display: flex;
+    }
 }
 
-@media (min-width: 992px)
-.col-md-6 {
-    width: 45% !important;
+@media only screen and (min-device-width: 768px){
+    .w3-card {
+        max-width: 705px;
+        max-height: 190px;
+        display: flex;
+    }
 }
 
-.container {
-  @media (min-width: @screen-xlg-min) {
-    width: @container-xlg;
+@media only screen and (min-device-width: 1024px){
+    .w3-card {
+        max-width: 315px;
+        max-height: 325px;
+        display: block;
+    }
+}
+
+@media only screen and (min-device-width: 1200px){
+    .w3-card {
+        max-width: 360px;
+        max-height: 320px;
+        display: block;
+    }
+}
+
+.card {
+    background: #fff;
+    display: inline-block;
+    border: 1px solid #ddd;
   }
-}
 
-.card-body-list{
-    margin: 15px;
-    font-size: 14px;
-    font-family: Raleway, sans-serif;
-}
+  .image {
+    float: left;
+    background: #000;
+    width: 25%;
+    height: 150px
+  }
 
-/* index bottom */ 
-.col-12.col-md-6.col-md-4.mb-3 {
-    bottom: 10px;
-}
+  .content {
+    float: left;
+    height: 140px;
+    width: 73%;
+    overflow: hidden;
+    padding: 5px;
+  }
+
+  .content h4 {
+    margin: 5px 0;
+  }
 
 /* FOOTER */
 .footer-copyright.text-center.py-3 {
@@ -247,8 +376,6 @@ img.icon-back {
 }
 
 /* Small devices (tablets, 768px and up) */
-@media (min-width: @screen-sm-min) { ... }
-
 p.description {
     font-size: large;
 }
@@ -275,12 +402,48 @@ p.description-text {
 }
 
 .img-detail {
-    width: 388px;
+    width: 380px;
     height: 220px;
     float: left;
     object-position: center;
     object-fit: cover;
     margin: 10px;
+}
+
+
+@media only screen and (min-device-width: 414px){
+    .img-detail {
+        max-width: 380px;
+        max-height: 220px;
+    }
+}
+
+@media only screen and (min-device-width: 480px){
+    .img-detail {
+        max-width: 330px;
+        max-height: 201px;
+    }
+}
+
+@media only screen and (min-device-width: 768px){
+    .img-detail {
+        max-width: 338px;
+        max-height: 190px;
+    }
+}
+
+@media only screen and (min-device-width: 1024px){
+    .img-detail {
+        max-width: 325px;
+        max-height: 325px;
+    }
+}
+
+@media only screen and (min-device-width: 1200px){
+    .img-detail {
+        max-width: 480px;
+        max-height: 380px;
+    }
 }
 
 .divider:after,
@@ -289,16 +452,6 @@ p.description-text {
   flex: 1;
   height: 1px;
   background: #eee;
-}
-
-.h-custom {
-  height: calc(100% - 73px);
-}
-
-@media (max-width: 450px) {
-  .h-custom {
-    height: 100%;
-  }
 }
 
 /* PROFILE PAGE */
@@ -394,9 +547,44 @@ img.icons-replay {
 
 .my-custom-scrollbar {
     position: relative;
-    width: 270px;
+    width: 700px;
     height: 988px;
     overflow: auto;
+}
+
+@media only screen and (min-device-width: 414px){
+    .my-custom-scrollbar {
+        max-width: 390px;
+        max-height: 388px;
+    }
+}
+
+@media only screen and (min-device-width: 480px){
+    .my-custom-scrollbar {
+        max-width: 695px;
+        max-height: 430px
+    }
+}
+
+@media only screen and (min-device-width: 768px){
+    .my-custom-scrollbar {
+        max-width: 700px;
+        max-height: 430px
+    }
+}
+
+@media only screen and (min-device-width: 1024px){
+    .my-custom-scrollbar {
+        max-width: 220px;
+        max-height: 988px;
+    }
+}
+
+@media only screen and (min-device-width: 1200px){
+    .my-custom-scrollbar {
+        max-width: 270px;
+        max-height: 988px;
+    }
 }
 
 /* SHOW MORE and LESS */
@@ -447,13 +635,12 @@ button.btn.btn-info {
 }
 #profile-description .show-more {
     margin: 12px;
-    color: #777; 
+    color: #0eb7e0; 
     position:relative; 
     font-size: 12px; 
     padding: 2px; 
     height: 20px; 
     text-align: center; 
-    background: #f1f1f1; 
     cursor: pointer;
 }
 #profile-description .show-more:hover { 

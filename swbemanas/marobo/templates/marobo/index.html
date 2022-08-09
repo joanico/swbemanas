@@ -2,10 +2,10 @@
 {% load static %}
 
 {% block content %}
-    <div class="container">
-        <div class="col-xxl-4">
-            <img class="img-responsive" src="{% static 'img/cover3.jpeg' %}" alt="Logo" />
-        </div>
+    <div class="col-xxl-4">
+        <img class="img-responsive" src="{% static 'img/Uma1.jpeg' %}" alt="Logo" />
+    </div>
+    <div class="container index">
         <div class="row innovation">
             <h1 class="text_innovation"><b>Marobo mak fatin ida nebe konesidu ho bemanas. Marobo iha fatin turismu hanesan bemanas bedois no tradisaun hanesan tais-metan uma tradisional</b></h1>
         </div>
@@ -20,8 +20,8 @@
                     <img class="card-img-top" src="{{ post.image.url }}" alt="Card image cap">
                     <div class="card-body-list">
                         <h4 class="card-title white-text">{{ post.title }}</h4>
-                        <p class="card-text">{{ post.descriptions|safe|truncatewords_html:25 }}</p>
-                        <a href="{% url 'detail' post.id %}" class="btn btn-primary btn-md">Hare detallu</a>
+                        <p class="card-text">{{ post.descriptions|safe|truncatewords_html:15 }}</p>
+                        <a href="{% url 'detail' post.id %}" class="class="card-link">Read more</a>
                     </div>
                 </div>
             </div>
