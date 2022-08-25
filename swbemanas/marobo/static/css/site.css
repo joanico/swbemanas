@@ -624,6 +624,7 @@ button.btn.btn-info {
     margin-top: 20px; 
     position:relative;
 }
+
 #profile-description .text {
     margin-bottom: 5px; 
     color: #777; 
@@ -633,6 +634,7 @@ button.btn.btn-info {
     font-size: 14px; 
     display: block;
 }
+
 #profile-description .show-more {
     margin: 12px;
     color: #0eb7e0; 
@@ -643,9 +645,11 @@ button.btn.btn-info {
     text-align: center; 
     cursor: pointer;
 }
+
 #profile-description .show-more:hover { 
     color: #1779dd;
 }
+
 #profile-description .show-more-height { 
     height: 260px; 
     overflow:hidden; }
@@ -659,6 +663,7 @@ p#title-detail {
 .carousel-control .glyphicon-chevron-right, .carousel-control .icon-next {
     margin-right: 0px;
 }
+
 .carousel-control .glyphicon-chevron-left, .carousel-control .icon-prev {
     margin-left: 0px;
 }
@@ -667,8 +672,13 @@ img.img-carousel.center-block {
     height: 100%;
     object-fit: cover;
 }
+
 .modal-content {
     min-height: 100%;
     height: auto;
     border-radius: 0;
    }
+
+textarea#id_content {
+    max-width: 210px;
+}
