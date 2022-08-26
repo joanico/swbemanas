@@ -105,13 +105,17 @@
                         <div class="comment">
                             {% for comment in comments %}
                                 <div class="commented">
-                                    <p class="info-author">{{ comment.author }} | {{ comment.created_on|timesince }}</p>
+                                    <p class="info-author">
+                                    <img src="{% static 'icons/user.svg' %}" class="icons-comment" alt="icon" width="25" height="25" title="comments"><b>{{ comment.author }}</b> | {{ comment.created_on|date:"SHORT_DATETIME_FORMAT"}}
+                                    </p>
                                     <p class="info-comment">
-                                        <img src="{% static 'icons/comment.svg' %}" class="icons-comment" alt="icon" width="20" height="20" title="comments"> {{ comment.content|safe|truncatewords_html:5000 }}
+                                        {{ comment.content|safe|truncatewords_html:5000 }}
                                     </p>
                                     {% for replay in comment.replies.all %}
-                                        <p class="info">{{ replay.author }} | {{ replay.created_on|timesince }}</p>
-                                        <p class="content-replay"><img src="{% static 'icons/replay.svg' %}" class="icons-replay" alt="icon" width="35" height="35" title="replay"> {{ replay.content|safe|truncatewords_html:5000 }}</p>
+                                        <p class="info">
+                                            <img src="{% static 'icons/user.svg' %}" class="icons-comment" alt="icon" width="22" height="22" title="comments"><b>{{ replay.author }}</b> | {{ replay.created_on|date:"SHORT_DATETIME_FORMAT"}}
+                                        </p>
+                                        <p class="content-replay">{{ replay.content|safe|truncatewords_html:5000 }}</p>
                                     {% endfor %}
                                     {% if user.is_authenticated %}
                                         <p>

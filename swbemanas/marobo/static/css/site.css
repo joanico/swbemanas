@@ -565,6 +565,7 @@ button.add-button {
 p.content-replay {
     font-style: italic;
     font-size: 12px;
+    margin-left: 20px;
 }
 
 p.info {
@@ -734,5 +735,10 @@ img.img-carousel.center-block {
 
 textarea#id_content {
     max-width: 210px;
+}
+
+/* ikus */
+img.icons-comment {
+    margin-right: 3px;
 }
 
