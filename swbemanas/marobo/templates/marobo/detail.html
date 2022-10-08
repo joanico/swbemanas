@@ -13,7 +13,7 @@
                     <br /><br />
                     <p class="description-text">{{ post.descriptions|safe|truncatewords_html:5000000 }}</p>
                 </div>
-                <div class="show-more">Show More</div>
+                <div class="show-more"><a>Show More</a></div>
             </div><!-- [End] #profile-description -->
 
             {% for p in photos %}
@@ -204,11 +204,18 @@
     $('.btn-cta-secondary').click(function (e) {
         var id = $(e.currentTarget).data('id')
         $('#form_' + id).toggle()
-    })
+    });
 
-    $(".show-more").click(function () {
-        $(this).text("Show Less");
-    $(".text").toggleClass("show-more-height");
+    $(document).ready(function(){
+      $(".show-more").click(function(){
+        if($(this).prev().hasClass("show-more-height")) {
+                $(this).children('a').text("Show Less");
+            } else {
+                $(this).children('a').text("Show More");
+            }
+      $(this).prev().toggleClass("show-more-height");
+
+      });
     });
 
 </script>
