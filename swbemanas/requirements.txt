@@ -15,6 +15,6 @@ pudb==2022.1.1
 Pygments==2.11.2
 pyparsing==2.2.0
 pytz==2021.1
-requests==2.27.1
+requests==2.32.2
 six==1.10.0
 sqlparse==0.4.4
