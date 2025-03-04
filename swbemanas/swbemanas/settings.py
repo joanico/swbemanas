@@ -25,7 +25,7 @@ SECRET_KEY = 'j3rg=s!dnx0&fm@bo)=*-_j!#%^*pl1ob)-%e$s5mcut$l1pbs'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'tinymce',
 ]
 
 MIDDLEWARE = [
@@ -106,7 +107,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Dili'
 
 USE_I18N = True
 
@@ -129,4 +130,5 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
-LOGIN_REDIRECT_URL = '/' # It means home view
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
