@@ -1,6 +1,6 @@
 appdirs==1.4.3
 asgiref==3.7.2
-certifi==2021.10.8
+certifi==2024.7.4
 charset-normalizer==2.0.12
 Django==4.2.19
 django-crispy-forms==1.14.0
